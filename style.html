@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/vs2015.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/styles/line-numbers.min.css">
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <script src="./script.js" defer></script>
+</head>
+
+<body>
+
+    <nav>
+        <span class="toggle">
+            <i class="ph ph-caret-left"></i>
+        </span>
+        <ul class="options"></ul>
+    </nav>
+
+    <header>
+        <h1 class="title">CSS3</h1>
+        <h2>1 - CSS - Introdução</h2>
+        <img src="./imgs/art.svg" alt="Webdesign">
+        <a href="https://www.giovanniguarnieri.com.br" target="_blank">By Giovanni Francesco Guarnieri</a>
+    </header>
+    <main>
+
+        <div class="region">
+            <h2 class="title">O que é CSS?</h2>
+            <p>CSS é a sigla para Cascading Style Sheets, que em português significa Folhas de Estilo em Cascata. O CSS
+                é
+                uma linguagem de estilo utilizada para definir a apresentação de documentos escritos em uma linguagem de
+                marcação, como o HTML. O CSS separa o conteúdo da representação visual do site. Com o CSS é possível
+                alterar a cor do texto, a fonte, o espaçamento entre parágrafos, o tamanho das imagens, o layout e muito
+                mais.</p>
+        </div>
+
+        <div class="region">
+            <h2 class="title">Como funciona o CSS?</h2>
+            <p>O CSS funciona em conjunto com o HTML. O HTML é responsável pela estrutura do site, enquanto o CSS é
+                responsável pela aparência visual. O CSS é composto por regras de estilo que são aplicadas a elementos
+                específicos do HTML. Cada regra de estilo é composta por um seletor e uma declaração. O seletor é o
+                elemento HTML que será estilizado, e a declaração é a propriedade que será aplicada a esse elemento.</p>
+        </div>
+
+        <div class="region">
+            <h2 class="title">
+                Formas de aplicar CSS
+            </h2>
+            <ul>
+                <li>Inline: o CSS é aplicado diretamente no elemento HTML.</li>
+                <ul>
+                    <li>&lt;p style="color: red;"&gt;Texto&lt;/p&gt; (não recomendado)</li>
+                </ul>
+                <li>Interno: o CSS é aplicado no cabeçalho (head) do documento HTML.</li>
+                <ul>
+                    <li>&lt;style&gt; p { color: red; } &lt;/style&gt;</li>
+                </ul>
+                <li>Externo: o CSS é aplicado em um arquivo separado. (recomendado)</li>
+                <ul>
+                    <li>&lt;link rel="stylesheet" href="style.css"&gt;</li>
+                </ul>
+            </ul>
+        </div>
+
+        <div class="region">
+            <h2 class="title">Sintaxe do CSS</h2>
+            <pre><code class="css">
+/* Seletor */
+seletor {
+    /* Propriedade: Valor */
+    color: red;
+    font-size: 16px;
+}
+</code></pre>
+        </div>
+
+        <div class="region">
+            <h2 class="title">Exemplo de CSS</h2>
+            <pre><code class="css">
+/* Seletor */
+h1 {
+    /* Propriedade: Valor */
+    color: red;
+    font-size: 24px;
+}
+</code></pre>
+        </div>
+
+        <div class="region">
+            <h2 class="title">Seletores CSS</h2>
+            <p>Os seletores CSS são utilizados para selecionar elementos HTML e aplicar estilos a eles. Existem vários
+                tipos de seletores CSS, como seletores de elemento, seletores de classe, seletores de ID, seletores de
+                atributo, seletores de pseudo-classe e seletores de pseudo-elemento.</p>
+            <ul>
+
+                <li>Seleciona todos os elementos</li>
+                <ul>
+                    <li>* { color: red; }</li>
+                </ul>
+
+                <li>Seletor de elemento: seleciona todos os elementos com o nome especificado.</li>
+                <ul>
+                    <li>p { color: red; }</li>
+                    <li>h1 { color: blue; }</li>
+                </ul>
+                <li>Seletor de classe: seleciona todos os elementos com a classe especificada.</li>
+                <ul>
+                    <li>.btn { color: green; }</li>
+                    <li>.card { color: yellow; }</li>
+                </ul>
+                <li>Seletor de ID: seleciona o elemento com o ID especificado.</li>
+                <ul>
+                    <li>#header { color: orange; }</li>
+                    <li>#footer { color: purple; }</li>
+                </ul>
+                <li>Seletor de atributo: seleciona os elementos com o atributo especificado.</li>
+                <ul>
+                    <li>[type="text"] { color: pink; }</li>
+                    <li>[href="https://www.google.com"] { color: brown; }</li>
+                </ul>
+                <li>Seletor de pseudo-classe: seleciona os elementos em um estado específico.</li>
+                <ul>
+                    <li>a:hover { color: red; }</li>
+                    <li>input:focus { color: blue; }</li>
+                </ul>
+            </ul>
+            <p>
+                Exemplo de seleção de vários elementos de diferentes formas
+            </p>
+            <pre><code class="css">
+/* Seletor de elemento */
+p {
+    color: red;
+}
+
+/* Seletor de classe */
+.btn {
+    color: green;
+}
+
+/* Seletor de ID */
+#header {
+    color: orange;
+}
+
+/* Seletor de atributo */
+[type="text"] {
+    color: pink;
+}
+
+/* Seletor de pseudo-classe - hover -> ao passar o mouse */
+a:hover {
+    color: red;
+}
+</code></pre>
+
+        </div>
+
+        <div class="region">
+            <h2 class="title">Propriedades CSS</h2>
+            <p>As propriedades CSS são utilizadas para definir o estilo dos elementos HTML. Existem várias propriedades
+                CSS, como propriedades de texto, propriedades de fonte, propriedades de cor, propriedades de layout,
+                propriedades de borda, propriedades de fundo, propriedades de animação, entre outras.</p>
+        </div>
+
+        <div class="region">
+            <h2 class="title">Valores CSS</h2>
+            <p>Os valores CSS são utilizados para definir o comportamento das propriedades CSS. Existem vários tipos de
+                valores CSS, como valores numéricos, valores de cor, valores de tamanho, valores de fonte, valores de
+                layout, valores de borda, valores de fundo, valores de animação, entre outros.</p>
+        </div>
+
+        <div class="region">
+            <h2 class="title">Modo compilado - Propriedades</h2>
+            <p>Algumas propriedades CSS podem ser agrupadas em uma única linha de código utilizando o modo compilado. O
+                modo
+                compilado é uma forma mais compacta de escrever o CSS, que facilita a leitura e a manutenção do código.
+                No modo compilado, as propriedades são separadas por ponto e vírgula, e os valores são separados por
+                espaços.</p>
+        </div>
+
+
+        <div class="region">
+            <h2 class="title">Unidades de Medidas</h2>
+            <p>As unidades de medida CSS são utilizadas para definir o tamanho dos elementos HTML. Existem vários tipos
+                de unidades de medida CSS, como unidades de comprimento, unidades de ângulo, unidades de tempo, unidades
+                de frequência, unidades de resolução, entre outras.</p>
+        </div>
+
+        <div class="region">
+            <h2 class="title">Cores</h2>
+            <p>As cores CSS são utilizadas para definir a cor dos elementos HTML. Existem várias formas de definir cores
+                em CSS, como cores nomeadas, cores hexadecimais, cores RGB, cores RGBA.. entre
+                outras.</p>
+            <ul>
+                <li>cores nomeadas: red, blue, green, yellow, etc.</li>
+                <li>cores hexadecimais: #ff0000, #00ff00, #0000ff, etc.</li>
+                <li>cores RGB: rgb(255, 0, 0), rgb(0, 255, 0), rgb(0, 0, 255), etc.</li>
+                <li>cores RGBA: rgba(255, 0, 0, 0.5), rgba(0, 255, 0, 0.5), rgba(0, 0, 255, 0.5), etc.</li>
+            </ul>
+            <p>Exemplo de aplicação de cor em p, h1 e elementos com classe btn</p>
+            <pre><code class="css">
+/* Seletor */
+p {
+    /* Propriedade: Valor */
+    color: red;
+}
+
+h1 {
+    color: blue;
+}
+
+.btn {
+    color: green;
+}
+</code></pre>
+
+        </div>
+
+        <div class="region">
+            <h2 class="title">Background</h2>
+            <p>O background CSS é utilizado para definir o fundo dos elementos HTML. Existem várias propriedades de
+                background CSS, como background-color, background-image, background-repeat, background-position,
+                background-size, background-attachment</p>
+
+            <ul>
+                <li>background-color: define a cor de fundo do elemento.</li>
+                <ul>
+                    <li>background-color: red;</li>
+                    <li>background-color: #ff0000;</li>
+                    <li>background-color: rgb(255, 0, 0);</li>
+                    <li>background-color: rgba(255, 0, 0, 0.5);</li>
+                </ul>
+                <li>background-image: define a imagem de fundo do elemento.</li>
+                <ul>
+                    <li>background-image: url('imagem.jpg');</li>
+                    <li>background-image:
+                        url('https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png');</li>
+                </ul>
+                <li>background-repeat: define a repetição da imagem de fundo.</li>
+                <ul>
+                    <li>Valores possíveis: repeat, no-repeat, repeat-x, repeat-y</li>
+                    <li>background-repeat: repeat;</li>
+                </ul>
+                <li>background-position: define a posição da imagem de fundo (x, y).</li>
+                <ul>
+                    <li>Valores possíveis: top, left, bottom, right, center</li>
+                    <li>background-position: left top;</li>
+                </ul>
+                <li>background-size: define o tamanho da imagem de fundo.</li>
+                <ul>
+                    <li>background-size: cover;</li>
+                    <li>background-size: contain;</li>
+                </ul>
+                <li>Background modo compilado tem a seguinte sintaxe:
+                    background: cor url('imagem.jpg') repetição posição tamanho;
+                </li>
+                <ul>
+                    <li>background: red url('imagem.jpg') no-repeat center center;</li>
+                    <li>background: blue
+                        url('https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png')
+                        repeat-x left top;</li>
+                </ul>
+                <li>background-attachment: define se a imagem de fundo rola com o conteúdo ou fica fixa.</li>
+                <p>
+                    Exemplo de aplicação de background em body
+                </p>
+            </ul>
+            <pre><code class="css">
+/* Seletor */
+body {
+    /* Propriedade: Valor */
+    background: red url('imagem.jpg') no-repeat center center;
+}
+</code></pre>
+        </div>
+
+        <div class="region">
+            <h2 class="title">Bordas</h2>
+            <p>As bordas CSS são utilizadas para definir a borda dos elementos HTML. Existem várias propriedades de
+                borda CSS, como border-width, border-style, border-color, border-radius, border-image.</p>
+            <ul>
+                <li>border-width: define a largura da borda.</li>
+                <ul>
+                    <li>border-width: 1px;</li>
+                </ul>
+                <li>border-style: define o estilo da borda.</li>
+                <ul>
+                    <li>border-style: solid;</li>
+                </ul>
+                <li>border-color: define a cor da borda.</li>
+                <ul>
+                    <li>border-color: red;</li>
+                </ul>
+                <li>border-radius: define o raio da borda.</li>
+                <ul>
+                    <li>border-radius: 5px;</li>
+                </ul>
+                <li>Borda: modo compilado</li>
+                <ul>
+                    <li>border: 1px solid red;</li>
+                </ul>
+                <li>Também é possível definir valores para bordas em lados específicos</li>
+                <ul>
+                    <li>border-top-width: 1px;</li>
+                </ul>
+            </ul>
+
+            <p>
+                Exemplo de aplicação de borda em btn
+            </p>
+
+            <pre><code class="css">
+/* Seletor */
+.btn {
+    /* Propriedade: Valor */
+    border: 1px solid red;
+}
+</code></pre>
+        </div>
+
+        <div class="region">
+            <h2 class="title">Fontes</h2>
+            <p>As fontes CSS são utilizadas para definir a fonte dos elementos HTML. Existem várias propriedades de
+                fonte
+                CSS, como font-family, font-size, font-weight, font-style, font-variant</p>
+            <ul>
+                <li>font-family: define a família da fonte.</li>
+                <ul>
+                    <li>font-family: Arial, sans-serif;</li>
+                </ul>
+                <li>font-size: define o tamanho da fonte.</li>
+                <ul>
+                    <li>font-size: 16px;</li>
+                </ul>
+                <li>font-weight: define o peso da fonte.</li>
+                <ul>
+                    <li>font-weight: bold;</li>
+                </ul>
+                <li>font-style: define o estilo da fonte.</li>
+                <ul>
+                    <li>font-style: italic;</li>
+                </ul>
+                <li>font-variant: define a variante da fonte.</li>
+                <ul>
+                    <li>font-variant: small-caps;</li>
+                </ul>
+                <li>Fonte: modo compilado</li>
+                <ul>
+                    <li>font: italic bold 16px Arial, sans-serif;</li>
+                </ul>
+            </ul>
+            <p>
+                Exemplo de aplicação de fonte em h1
+            </p>
+            <pre><code class="css">
+
+/* Seletor - Aplicação de estilo */
+h1 {
+    /* Propriedade: Valor */
+    font-style: italic;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
+
+/* Seletor - Aplicação de estilo em modo compilado  */
+h1 {
+    /* Propriedade: Valor */
+    font: italic bold 16px Arial, sans-serif;
+}
+</code></pre>
+
+        </div>
+
+        <div class="region">
+            <h2 class="title">Texto</h2>
+            <p>O texto CSS é utilizado para definir o estilo do texto dos elementos HTML. Existem várias propriedades de
+                texto CSS, como as comentadas acima e também: text-align, text-decoration, text-transform,
+                text-indent, line-height, letter-spacing, word-spacing, white-space, text-shadow.</p>
+            <ul>
+                <li>color: define a cor do texto.</li>
+                <ul>
+                    <li>color: red;</li>
+                </ul>
+                <li>font-size: define o tamanho do texto.</li>
+                <ul>
+                    <li>font-size: 16px;</li>
+                </ul>
+                <li>font-weight: define o peso do texto.</li>
+                <ul>
+                    <li>font-weight: bold;</li>
+                </ul>
+                <li>font-style: define o estilo do texto.</li>
+                <ul>
+                    <li>font-style: italic;</li>
+                </ul>
+                <li>text-align: define o alinhamento do texto.</li>
+                <ul>
+                    <li>text-align: center;</li>
+                </ul>
+                <li>text-decoration: define a decoração do texto.</li>
+                <ul>
+                    <li>text-decoration: underline;</li>
+                </ul>
+                <li>text-transform: define a transformação do texto.</li>
+                <ul>
+                    <li>text-transform: uppercase;</li>
+                </ul>
+                <li>text-indent: define o recuo da primeira linha do texto.</li>
+                <ul>
+                    <li>text-indent: 20px;</li>
+                </ul>
+                <li>line-height: define a altura da linha do texto.</li>
+                <ul>
+                    <li>line-height: 1.5;</li>
+                </ul>
+                <li>letter-spacing: define o espaçamento entre as letras do texto.</li>
+                <ul>
+                    <li>letter-spacing: 2px;</li>
+                </ul>
+                <li>word-spacing: define o espaçamento entre as palavras do texto.</li>
+                <ul>
+                    <li>word-spacing: 4px;</li>
+                </ul>
+                <li>white-space: define o tratamento do espaço em branco do texto.</li>
+                <ul>
+                    <li>white-space: nowrap;</li>
+                </ul>
+                <li>text-shadow: define a sombra do texto.</li>
+                <ul>
+                    <li>text-shadow: 1px 1px 1px black;</li>
+                </ul>
+            </ul>
+            <p>
+                Exemplo de aplicação de texto em p
+            </p>
+            <pre><code class="css">
+/* Seletor */
+p {
+    /* Propriedade: Valor */
+    text-align: center;
+    text-decoration: underline;
+    text-transform: uppercase;
+    text-indent: 20px;
+    line-height: 1.5;
+    letter-spacing: 2px;
+    word-spacing: 4px;
+    white-space: nowrap;
+    text-shadow: 1px 1px 1px black;
+}
+</code></pre>
+        </div>
+
+        <div class="region">
+            <h2 class="title">Margens</h2>
+            <p>As margens CSS são utilizadas para definir o espaçamento entre os elementos HTML. Existem várias
+                propriedades de margem CSS, como margin-top, margin-right, margin-bottom, margin-left, margin.</p>
+            <ul>
+                <li>Margem automática - Aplica margem automaticamente</li>
+                <ul>
+                    <li>margin: auto;</li>
+                    <li>margin-left: auto;</li>
+                    <li>margin-right: auto;</li>
+                </ul>
+                <li>margin-top: define o espaçamento superior.</li>
+                <ul>
+                    <li>margin-top: 10px;</li>
+                </ul>
+                <li>margin-right: define o espaçamento direito.</li>
+                <ul>
+                    <li>margin-right: 20px;</li>
+                </ul>
+                <li>margin-bottom: define o espaçamento inferior.</li>
+                <ul>
+                    <li>margin-bottom: 30px;</li>
+                </ul>
+                <li>margin-left: define o espaçamento esquerdo.</li>
+                <ul>
+                    <li>margin-left: 40px;</li>
+                </ul>
+                <li>Margem: modo compilado (y, x)</li>
+                <ul>
+                    <li>margin: 0 auto;</li>
+                </ul>
+                <li>Margem: modo compilado (top, right, bottom, left)</li>
+                <ul>
+                    <li>margin: 10px 20px 30px 40px;</li>
+                </ul>
+            </ul>
+            <p>
+                Exemplo de aplicação de margem em btn
+            </p>
+            <pre><code class="css">
+/* Seletor */
+.btn {
+    /* Propriedade: Valor */
+    margin: 10px 20px 30px 40px;
+}
+</code></pre>
+        </div>
+        <div class="region">
+            <h2 class="title">Referências Bibliográficas</h2>
+            <a href="https://undraw.co/illustrations">Illustrations by unDraw</a> <br />
+            <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML">MDN Web Docs - HTML</a><br />
+            <a href="https://www.w3schools.com/html/">W3Schools - HTML</a><br />
+            <a href="https://michalsnik.github.io/aos/">AOS - Animate on Scroll Library</a><br />
+            <a href="https://www.figma.com/community/file/849342658995967505">SaaSDesign - Figma Website Template -
+                Landing Page (Free)</a><br />
+        </div>
+    </main>
+
+    <footer>
+        <p>Desenvolvido por Giovanni Francesco Guarnieri</p>
+    </footer>
+
+</body>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+</html>

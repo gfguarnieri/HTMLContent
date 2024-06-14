@@ -25,4 +25,3 @@ btnToggle.addEventListener('click', () => {
 AOS.init();
 
 hljs.highlightAll();
-hljs.initLineNumbersOnLoad();
