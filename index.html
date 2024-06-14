@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/monokai-sublime.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/styles/line-numbers.min.css">
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+</head>
+
+<body>
+
+    <nav>
+        <span class="toggle">
+            <i class="ph ph-caret-left"></i>
+        </span>
+        <ul class="options"></ul>
+    </nav>
+
+    <header>
+        <h1 class="title">Material de HTML</h1>
+        <img src="./imgs/web.svg" alt="Webdesign">
+        <a href="https://www.giovanniguarnieri.com.br" target="_blank">By Giovanni Francesco Guarnieri</a>
+    </header>
+    <main>
+        <h2>O que é HTML?</h2>
+        <p>
+            HTML é a sigla para HyperText Markup Language, que significa Linguagem de Marcação de Hipertexto. É uma
+            linguagem de marcação utilizada para criar e estruturar páginas web. O HTML é composto por uma série de
+            elementos, como tags, atributos e conteúdo, que são utilizados para definir a estrutura e o conteúdo de uma
+            página web.
+        </p>
+        <h2 id="inicio">O que são tags em HTML?</h2>
+
+        <p>Em HTML, as tags são elementos utilizados para marcar e estruturar o conteúdo de uma página web. Elas são
+            compostas por um nome entre os símbolos "&lt;" e ">" .
+        </p>
+        <p>
+            Existem tags de abertura e tags de fechamento. A tag de abertura é representada pelo nome da tag entre os
+            símbolos "&lt;" e ">" , enquanto a tag de fechamento é representada pelo nome da tag entre os símbolos
+            "&lt;" e ">"
+            .
+        </p>
+        <p>
+            As tags podem conter atributos, que são informações adicionais que especificam o comportamento ou
+            a aparência do elemento. Os atributos são definidos dentro da tag de abertura e possuem um nome
+            e um valor.
+        </p>
+
+        <h2>O que são atributos em HTML?</h2>
+        <p>Em HTML, os atributos são informações adicionais que são adicionadas às tags para especificar o
+            comportamento ou a aparência do elemento.</p>
+        <p>Os atributos são definidos dentro da tag de abertura e possuem um nome e um valor. O nome do
+            atributo é seguido pelo símbolo "=" e, em seguida, pelo valor do atributo, que pode ser colocado
+            entre aspas simples ou duplas.</p>
+        <p>Alguns exemplos de atributos comuns em HTML são o "id", que identifica exclusivamente um
+            elemento, o "class", que define uma classe para o elemento, e o "src", que especifica a origem
+            de um recurso, como uma imagem ou um vídeo.</p>
+
+        <h2>Principais tags em HTML</h2>
+        <p>A seguir, apresentamos alguns exemplos das principais tags em HTML e suas funcionalidades:</p>
+
+        <div class="region">
+            <h1 class="title">Exemplos de parágrafos</h1>
+            <p>Exemplo de parágrafo 1</p>
+            <p>Exemplo de parágrafo 2</p>
+            <p>Exemplo de parágrafo 3</p>
+
+            <pre>
+                <code class="html">            
+                    &lt;p&gt;Exemplo de parágrafo 1&lt;/p&gt;
+                    &lt;p&gt;Exemplo de parágrafo 2&lt;/p&gt;
+                    &lt;p&gt;Exemplo de parágrafo 3&lt;/p&gt;
+                </code>
+            </pre>
+        </div>
+        <div class="region">
+            <h1 class="title">Exemplos de quebra de linha - br</h1>
+            <p>Exemplo de texto 1<br>Exemplo de texto 2</p>
+            <p>Exemplo de texto 3<br>Exemplo de texto 4</p>
+            <pre>
+            <code class="html">
+                &lt;p&gt;Exemplo de texto 1&lt;br&gt;Exemplo de texto 2&lt;/p&gt;
+                &lt;p&gt;Exemplo de texto 3&lt;br&gt;Exemplo de texto 4&lt;/p&gt;
+            </code>
+        </pre>
+        </div>
+
+        <div class="region">
+            <h1 class="title">Exemplos de formatação de texto</h1>
+            <p><strong>Exemplo de texto em negrito</strong></p>
+            <p><em>Exemplo de texto em itálico</em></p>
+            <p><u>Exemplo de texto sublinhado</u></p>
+            <p><s>Exemplo de texto riscado</s></p>
+            <p><mark>Exemplo de texto marcado</mark></p>
+            <p>Exemplo: <small>Exemplo de texto pequeno</small></p>
+            <p>Teste: <sub>Exemplo de texto subscrito</sub></p>
+            <p>Teste: <sup>Exemplo de texto sobrescrito</sup></p>
+
+            <pre>
+        <code class="html">
+            
+            &lt;p&gt;&lt;strong&gt;Exemplo de texto em negrito&lt;/strong&gt;&lt;/p&gt;
+            &lt;p&gt;&lt;em&gt;Exemplo de texto em itálico&lt;/em&gt;&lt;/p&gt;
+            &lt;p&gt;&lt;u&gt;Exemplo de texto sublinhado&lt;/u&gt;&lt;/p&gt;
+            &lt;p&gt;&lt;s&gt;Exemplo de texto riscado&lt;/s&gt;&lt;/p&gt;
+            &lt;p&gt;&lt;mark&gt;Exemplo de texto marcado&lt;/mark&gt;&lt;/p&gt;
+            &lt;p&gt;Exemplo: &lt;small&gt;Exemplo de texto pequeno&lt;/small&gt;&lt;/p&gt;
+            &lt;p&gt;Teste: &lt;sub&gt;Exemplo de texto subscrito&lt;/sub&gt;&lt;/p&gt;
+            &lt;p&gt;Teste: &lt;sup&gt;Exemplo de texto sobrescrito&lt;/sup&gt;&lt;/p&gt;
+        
+        </code>
+        </pre>
+        </div>
+
+
+        <div class="region">
+
+            <h1 class="title">Títulos</h1>
+            <h1>Exemplo de título 1</h1>
+            <h2>Exemplo de título 2</h2>
+            <h3>Exemplo de título 3</h3>
+            <h4>Exemplo de título 4</h4>
+            <h5>Exemplo de título 5</h5>
+            <h6>Exemplo de título 6</h6>
+
+            <pre>
+        <code class="html">
+            &lt;h1&gt;Exemplo de título 1&lt;/h1&gt;
+            &lt;h2&gt;Exemplo de título 2&lt;/h2&gt;
+            &lt;h3&gt;Exemplo de título 3&lt;/h3&gt;
+            &lt;h4&gt;Exemplo de título 4&lt;/h4&gt;
+            &lt;h5&gt;Exemplo de título 5&lt;/h5&gt;
+            &lt;h6&gt;Exemplo de título 6&lt;/h6&gt;
+        </code>
+    </pre>
+        </div>
+        <div class="region">
+
+            <h1 class="title">Listas</h1>
+            <h2>Exemplo de lista não ordenada</h2>
+            <ul>
+                <li>Exemplo 1</li>
+                <li>Exemplo 2</li>
+                <li>Exemplo 3</li>
+            </ul>
+
+            <pre>
+        <code class="html">
+            &lt;ul&gt;
+                &lt;li&gt;Exemplo 1&lt;/li&gt;
+                &lt;li&gt;Exemplo 2&lt;/li&gt;
+                &lt;li&gt;Exemplo 3&lt;/li&gt;
+            &lt;/ul&gt;
+        </code>
+    </pre>
+        </div>
+        <div class="region">
+
+            <h2>Lista ordenada</h2>
+            <ol>
+                <li>Flamengo</li>
+                <li>Palmeiras</li>
+                <li>Santos</li>
+                <li>São Paulo</li>
+                <li>Grêmio</li>
+                <li>Internacional</li>
+                <li>Atlético Mineiro</li>
+                <li>Corinthians</li>
+                <li>Fluminense</li>
+                <li>Bahia</li>
+            </ol>
+
+            <pre>
+        <code class="html">
+            &lt;ol&gt;
+                &lt;li&gt;Flamengo&lt;/li&gt;
+                &lt;li&gt;Palmeiras&lt;/li&gt;
+                &lt;li&gt;Santos&lt;/li&gt;
+                &lt;li&gt;São Paulo&lt;/li&gt;
+                &lt;li&gt;Grêmio&lt;/li&gt;
+                &lt;li&gt;Internacional&lt;/li&gt;
+                &lt;li&gt;Atlético Mineiro&lt;/li&gt;
+                &lt;li&gt;Corinthians&lt;/li&gt;
+                &lt;li&gt;Fluminense&lt;/li&gt;
+                &lt;li&gt;Bahia&lt;/li&gt;
+            &lt;/ol&gt;
+        </code>
+    </pre>
+        </div>
+        <div class="region">
+
+
+            <h2>Seção de comentários</h2>
+
+            <!-- Comentários em HTML -->
+
+            <!--
+        Comentário em HTML de várias linhas
+        Linha 1
+        Linha 2
+        Linha 3
+    -->
+
+            <pre>
+        <code class="html">
+            &lt;!-- Comentário em HTML --&gt;
+            &lt;!--
+                Comentário em HTML de várias linhas
+                Linha 1
+                Linha 2
+                Linha 3
+            --&gt;
+        </code>
+    </pre>
+        </div>
+        <div class="region">
+
+
+            <h2 class="title">Links</h2>
+            <p>
+                Link na mesma aba: <a href="https://www.google.com">Google</a>
+            </p>
+            <p>
+                Criar link que abra em outra aba: <a href="https://www.google.com" target="_blank">Google</a>
+            </p>
+            <p>
+                Link para uma seção da página: <a href="#inicio">Ir para a seção de link</a>
+            </p>
+            <p>
+                Link para um e-mail: <a href="mailto:giovanni.guarnieri@fatec.sp.gov.br">Enviar email</a>
+            </p>
+            <p>
+                Link para um telefone: <a href="tel:+5511999999999">Ligar</a>
+            </p>
+            <p>
+                Link para uma página do próprio projeto: <a href="teste.html">Acessar</a>
+            </p>
+
+            <pre>
+        <code class="html">
+            &lt;p&gt;Link na mesma aba: &lt;a href="https://www.google.com"&gt;Google&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt;Criar link que abra em outra aba: &lt;a href="https://www.google.com" target="_blank"&gt;Google&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt;Link para uma seção da página: &lt;a href="#inicio"&gt;Ir para a seção de link&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt;Link para um e-mail: &lt;a href="mailto:giovanni.guarnieri@fatec.sp.gov.br">Enviar email&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt;Link para um telefone: &lt;a href="tel:+5511999999999"&gt;Ligar&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt;Link para uma página do próprio projeto: &lt;a href="teste.html"&gt;Acessar&lt;/a&gt;&lt;/p&gt;
+        </code>
+    </pre>
+        </div>
+        <div class="region">
+
+            <h2 class="title">Imagens</h2>
+
+            <p>
+                Imagem com link externo: <img
+                    src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+                    alt="Logo do Google">
+            </p>
+            <p>
+                Imagem de pasta do projeto - Caminho Relativo: <img src="imgs/google.png" alt="Logo do Google">
+            </p>
+
+            <pre>
+        <code class="html">
+            &lt;p&gt;Imagem com link externo: &lt;img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Logo do Google"&gt;&lt;/p&gt;
+            &lt;p&gt;Imagem de pasta do projeto - Caminho Relativo: &lt;img src="imgs/google.png" alt="Logo do Google"&gt;&lt;/p&gt;
+        </code>
+    </pre>
+        </div>
+        <div class="region">
+
+            <h2 class="title">Tabelas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Animal</th>
+                        <th>Classificação</th>
+                        <th>Habitat</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Jaguar</td>
+                        <td>Mamífero</td>
+                        <td>Amazônia</td>
+                    </tr>
+                    <tr>
+                        <td>Tucano</td>
+                        <td>Ave</td>
+                        <td>Mata Atlântica</td>
+                    </tr>
+                    <tr>
+                        <td>Jabuti</td>
+                        <td>Réptil</td>
+                        <td>Cerrado</td>
+                    </tr>
+                    <tr>
+                        <td>Onça-pintada</td>
+                        <td>Mamífero</td>
+                        <td>Pantanal</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <pre>
+        <code class="html">
+            &lt;table&gt;
+                &lt;thead&gt;
+                    &lt;tr&gt;
+                        &lt;th&gt;Animal&lt;/th&gt;
+                        &lt;th&gt;Classificação&lt;/th&gt;
+                        &lt;th&gt;Habitat&lt;/th&gt;
+                    &lt;/tr&gt;
+                &lt;/thead&gt;
+                &lt;tbody&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;Jaguar&lt;/td&gt;
+                        &lt;td&gt;Mamífero&lt;/td&gt;
+                        &lt;td&gt;Amazônia&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;Tucano&lt;/td&gt;
+                        &lt;td&gt;Ave&lt;/td&gt;
+                        &lt;td&gt;Mata Atlântica&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;Jabuti&lt;/td&gt;
+                        &lt;td&gt;Réptil&lt;/td&gt;
+                        &lt;td&gt;Cerrado&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;Onça-pintada&lt;/td&gt;
+                        &lt;td&gt;Mamífero&lt;/td&gt;
+                        &lt;td&gt;Pantanal&lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/tbody&gt;
+            &lt;/table&gt;
+        </code>
+    </pre>
+        </div>
+        <div class="region">
+
+            <h2 class="title">Formulário</h2>
+            <form action="#" method="GET">
+                <fieldset>
+                    <legend>Formulário de Exemplo</legend>
+                    <div class="campo">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" autocomplete="off" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="senha">Senha:</label>
+                        <input type="password" id="senha" name="senha" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="confirmar-senha">Confirmar Senha:</label>
+                        <input type="password" id="confirmar-senha" name="confirmar-senha" required>
+                    </div>
+
+                    <button type="submit">Enviar</button>
+                    <button type="reset">Limpar</button>
+                </fieldset>
+            </form>
+
+            <pre>
+        <code class="html">
+            &lt;form action="#" method="GET"&gt;
+                &lt;fieldset&gt;
+                    &lt;legend&gt;Formulário de Exemplo&lt;/legend&gt;
+                    &lt;div class="campo"&gt;
+                        &lt;label for="nome"&gt;Nome:&lt;/label&gt;
+                        &lt;input type="text" id="nome" name="nome" required&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="campo"&gt;
+                        &lt;label for="email"&gt;Email:&lt;/label&gt;
+                        &lt;input type="email" id="email" name="email" autocomplete="off" required&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="campo"&gt;
+                        &lt;label for="senha"&gt;Senha:&lt;/label&gt;
+                        &lt;input type="password" id="senha" name="senha" required&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="campo"&gt;
+                        &lt;label for="confirmar-senha"&gt;Confirmar Senha:&lt;/label&gt;
+                        &lt;input type="password" id="confirmar-senha" name="confirmar-senha" required&gt;
+                    &lt;/div&gt;
+
+                    &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+                    &lt;button type="reset"&gt;Limpar&lt;/button&gt;
+                &lt;/fieldset&gt;
+            &lt;/form&gt;
+        </code>
+        </pre>
+        </div>
+        <div class="region">
+            <h2 class="title">Referências Bibliográficas</h2>
+            <a href="https://undraw.co/illustrations">Illustrations by unDraw</a> <br />
+            <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML">MDN Web Docs - HTML</a><br />
+            <a href="https://www.w3schools.com/html/">W3Schools - HTML</a><br />
+            <a href="https://michalsnik.github.io/aos/">AOS - Animate on Scroll Library</a><br />
+        </div>
+    </main>
+
+    <footer>
+        <p>Desenvolvido por Giovanni Francesco Guarnieri</p>
+    </footer>
+
+</body>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+</html>
