@@ -28,6 +28,7 @@
 
     <header>
         <h1 class="title">Material de HTML</h1>
+        <h2>1 - Introdução</h2>
         <img src="./imgs/web.svg" alt="Webdesign">
         <a href="https://www.giovanniguarnieri.com.br" target="_blank">By Giovanni Francesco Guarnieri</a>
     </header>
@@ -68,6 +69,111 @@
 
         <h2>Principais tags em HTML</h2>
         <p>A seguir, apresentamos alguns exemplos das principais tags em HTML e suas funcionalidades:</p>
+
+        <div class="region">
+            <h1 class="title">DOCTYPE</h1>
+            <p>Define o tipo de documento e a versão do HTML utilizada.</p>
+            <pre>
+                <code class="html">
+                    &lt;!DOCTYPE html&gt;
+                </code>
+            </pre>
+        </div>
+
+        <div class="region">
+            <h1 class="title">html</h1>
+            <p>Tag raiz de um documento HTML.</p>
+            <p>Todos as demais tags HTML ficam dentro de HTML</p>
+            <pre>
+                <code class="html">
+                    &lt;html&gt;
+                    &lt;/html&gt;
+                </code>
+            </pre>
+            <h2>Principais atributos</h2>
+            <ul>
+                <li>lang: Define o idioma do documento.</li>
+                <ul>
+                    <li>Exemplo: &lt;html lang="pt-br"&gt;</li>
+                </ul>
+            </ul>
+        </div>
+
+        <div class="region">
+            <h1 class="title">head</h1>
+            <p>Contém informações sobre o documento, como o título, metadados e links para arquivos externos.</p>
+            <pre>
+                <code class="html">
+                    &lt;head&gt;
+                    &lt;/head&gt;
+                </code>
+            </pre>
+        </div>
+
+        <div class="region">
+            <h1 class="title">meta</h1>
+            <p>Define metadados sobre o documento, como a codificação de caracteres e a descrição do conteúdo.</p>
+            <h2>Principais atributos</h2>
+            <ul>
+                <li>charset: Define a codificação de caracteres do documento.</li>
+                <ul>
+                    <li>Exemplo: &lt;meta charset="UTF-8"&gt;</li>
+                </ul>
+                <li>name: Define o nome do metadado.</li>
+                <ul>
+                    <li>Exemplo: &lt;meta name="description" content="Descrição do documento"&gt;</li>
+                </ul>
+            </ul>
+
+            <pre>
+                <code class="html">
+                    &lt;meta charset="UTF-8"&gt;
+                    &lt;meta name="description" content="Descrição do documento"&gt;
+                </code>
+            </pre>
+        </div>
+
+        <div class="region">
+            <h1 class="title">title</h1>
+            <p>Define o título do documento, que é exibido na barra de título do navegador.</p>
+            <p>Fica dentro </p>
+            <pre>
+                <code class="html">
+                    &lt;title&gt;Título do Documento&lt;/title&gt;
+                </code>
+            </pre>
+        </div>
+
+        <div class="region">
+            <h1 class="title">body</h1>
+            <p>Contém o conteúdo do documento, como texto, imagens, links e outros elementos.</p>
+            <pre>
+                <code class="html">
+                    &lt;body&gt;
+                    &lt;/body&gt;
+                </code>
+            </pre>
+        </div>
+
+        <div class="region">
+            <h1 class="title">Estrutura básica html5</h1>
+            <pre>
+                <code class="html">
+                    &lt;!DOCTYPE html&gt;
+                    &lt;html lang="pt-br"&gt;
+                    &lt;head&gt;
+                        &lt;meta charset="UTF-8"&gt;
+                        &lt;meta name="description" content="Descrição do documento"&gt;
+                        &lt;title&gt;Título do Documento&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;h1&gt;Título do Documento&lt;/h1&gt;
+                        &lt;p&gt;Conteúdo do documento&lt;/p&gt;
+                    &lt;/body&gt;
+                    &lt;/html&gt;
+                </code>
+            </pre>
+        </div>
 
         <div class="region">
             <h1 class="title">Parágrafos</h1>
@@ -154,15 +260,49 @@
                 <li>Exemplo 3</li>
             </ul>
 
+
             <pre>
-        <code class="html">
-            &lt;ul&gt;
-                &lt;li&gt;Exemplo 1&lt;/li&gt;
-                &lt;li&gt;Exemplo 2&lt;/li&gt;
-                &lt;li&gt;Exemplo 3&lt;/li&gt;
-            &lt;/ul&gt;
-        </code>
-    </pre>
+                <code class="html">
+                    &lt;ul&gt;
+                        &lt;li&gt;Exemplo 1&lt;/li&gt;
+                        &lt;li&gt;Exemplo 2&lt;/li&gt;
+                        &lt;li&gt;Exemplo 3&lt;/li&gt;
+                    &lt;/ul&gt;
+                </code>
+            </pre>
+
+            <h2>Principais atributos</h2>
+            <ul>
+                <li>type: Define o tipo de marcador da lista.</li>
+                <ul>
+                    <li>Exemplo: &lt;ul type="circle"&gt;</li>
+                    <li>
+                        <ul>
+                            <li>circle</li>
+                            <li>disc</li>
+                            <li>square</li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </ul>
+
+            <ul type="square">
+                <li>Exemplo 1</li>
+                <li>Exemplo 2</li>
+                <li>Exemplo 3</li>
+            </ul>
+
+            <pre>
+                <code class="html">
+                    &lt;ul type="square" &gt;
+                        &lt;li&gt;Exemplo 1&lt;/li&gt;
+                        &lt;li&gt;Exemplo 2&lt;/li&gt;
+                        &lt;li&gt;Exemplo 3&lt;/li&gt;
+                    &lt;/ul&gt;
+                </code>
+            </pre>
+
         </div>
         <div class="region">
 
@@ -181,7 +321,7 @@
             </ol>
 
             <pre>
-        <code class="html">
+            <code class="html">
             &lt;ol&gt;
                 &lt;li&gt;Flamengo&lt;/li&gt;
                 &lt;li&gt;Palmeiras&lt;/li&gt;
@@ -194,8 +334,50 @@
                 &lt;li&gt;Fluminense&lt;/li&gt;
                 &lt;li&gt;Bahia&lt;/li&gt;
             &lt;/ol&gt;
-        </code>
-    </pre>
+            </code>
+        </pre>
+            <h2>Principais atributos</h2>
+            <ul>
+                <li>type: Define o tipo de numeração da lista.</li>
+                <ul>
+                    <li>Exemplo: &lt;ol type="A"&gt;</li>
+                </ul>
+                <li>start: Define o número inicial da lista.</li>
+                <ul>
+                    <li>Exemplo: &lt;ol start="3"&gt;</li>
+                </ul>
+            </ul>
+
+            <ol type="A" start="3">
+                <li>Flamengo</li>
+                <li>Palmeiras</li>
+                <li>Santos</li>
+                <li>São Paulo</li>
+                <li>Grêmio</li>
+                <li>Internacional</li>
+                <li>Atlético Mineiro</li>
+                <li>Corinthians</li>
+                <li>Fluminense</li>
+                <li>Bahia</li>
+            </ol>
+
+            <pre>
+            <code class="html">
+            &lt;ol type="A" start="3"&gt;
+                &lt;li&gt;Flamengo&lt;/li&gt;
+                &lt;li&gt;Palmeiras&lt;/li&gt;
+                &lt;li&gt;Santos&lt;/li&gt;
+                &lt;li&gt;São Paulo&lt;/li&gt;
+                &lt;li&gt;Grêmio&lt;/li&gt;
+                &lt;li&gt;Internacional&lt;/li&gt;
+                &lt;li&gt;Atlético Mineiro&lt;/li&gt;
+                &lt;li&gt;Corinthians&lt;/li&gt;
+                &lt;li&gt;Fluminense&lt;/li&gt;
+                &lt;li&gt;Bahia&lt;/li&gt;
+            &lt;/ol&gt;
+            </code>
+        </pre>
+
         </div>
         <div class="region">
 
@@ -348,6 +530,82 @@
         </code>
     </pre>
         </div>
+
+        <div class="region">
+            <h2 class="title">Tags de agrupamento</h2>
+            <h3>Div</h3>
+            <p>Div é uma tag de agrupamento que permite agrupar elementos em um bloco. Ela é utilizada para criar seções
+                ou áreas de conteúdo em uma página web.</p>
+            <div>
+                <p>Exemplo de texto dentro de uma div</p>
+            </div>
+            <div>
+                <p>Outro exemplo de texto dentro de uma div</p>
+            </div>
+
+            <pre>
+                <code class="html">
+                    &lt;div&gt;
+                        &lt;p&gt;Exemplo de texto dentro de uma div&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;p&gt;Outro exemplo de texto dentro de uma div&lt;/p&gt;
+                    &lt;/div&gt;
+                </code>
+            </pre>
+
+            <h3>Span</h3>
+            <p>
+                Span é uma tag de agrupamento que permite agrupar elementos em linha. Ela é utilizada para aplicar
+                estilos ou manipular partes específicas.
+            </p>
+            <p>
+                Diferente da tag div, a tag span não cria um bloco, mas sim uma área de conteúdo em linha.
+            </p>
+            <p>Exemplo de texto com <span>span</span></p>
+            <p>Outro exemplo de texto com <span>span</span></p>
+
+            <pre>
+                <code class="html">
+                    &lt;p&gt;Exemplo de texto com &lt;span&gt;span&lt;/span&gt;&lt;/p&gt;
+                    &lt;p&gt;Outro exemplo de texto com &lt;span&gt;span&lt;/span&gt;&lt;/p&gt;
+                </code>
+            </pre>
+
+        </div>
+
+        <div class="region">
+            <h2 class="title">Tags HTML5</h2>
+            <h3>Header</h3>
+            <p>Header é uma tag de agrupamento que representa o cabeçalho de uma seção ou de um documento. Ela é
+                utilizada para agrupar elementos de cabeçalho, como títulos, logotipos e menus de navegação.</p>
+
+            <h3>Footer</h3>
+            <p>Footer é uma tag de agrupamento que representa o rodapé de uma seção ou de um documento. Ela é utilizada
+                para agrupar elementos de rodapé, como informações de contato, links úteis e créditos.</p>
+
+            <h3>Nav</h3>
+            <p>Nav é uma tag de agrupamento que representa uma seção de navegação em um documento. Ela é utilizada para
+                agrupar links de navegação, menus e barras de navegação.</p>
+
+            <h3>Main</h3>
+            <p>Main é uma tag de agrupamento que representa o conteúdo principal de um documento. Ela é utilizada para
+                agrupar o conteúdo principal de uma página web, como artigos, posts e seções de destaque.</p>
+
+            <h3>Section</h3>
+            <p>Section é uma tag de agrupamento que representa uma seção de conteúdo em um documento. Ela é utilizada
+                para agrupar elementos relacionados, como artigos, posts e seções de conteúdo.</p>
+
+            <h3>Article</h3>
+            <p>Article é uma tag de agrupamento que representa um conteúdo independente e autônomo em um documento. Ela
+                é utilizada para agrupar elementos que podem ser distribuídos e reutilizados de forma independente.</p>
+
+            <h3>Aside</h3>
+            <p>Aside é uma tag de agrupamento que representa um conteúdo relacionado ou complementar em um documento.
+                Ela
+                é utilizada para agrupar elementos que são secundários ou adicionais ao conteúdo principal.</p>
+        </div>
+
         <div class="region">
 
             <h2 class="title">Formulário</h2>
@@ -410,6 +668,40 @@
             &lt;/form&gt;
         </code>
         </pre>
+
+            <div class="region">
+                <h2 class="title">A importânica de usar as tags corretamente</h2>
+                <p>As tags em HTML são essenciais para estruturar e organizar o conteúdo de uma página web. Ao utilizar
+                    as
+                    tags corretamente, é possível criar páginas mais acessíveis, indexáveis e otimizadas para os motores
+                    de
+                    busca.</p>
+                <p>
+                    Além disso, as tags corretas facilitam a manutenção e o desenvolvimento do código, tornando-o mais
+                    legível e organizado. Por isso, é importante conhecer e utilizar as tags de forma adequada para
+                    garantir
+                    a qualidade e a eficiência do seu código HTML.
+                </p>
+                <p>
+                    Isso está relacionado a Semântica, que é a ciência que estuda o significado das palavras e das
+                    frases em
+                    uma língua. No contexto do desenvolvimento web, a semântica refere-se à utilização correta das tags
+                    HTML
+                </p>
+            </div>
+
+            <div class="region">
+                <h2 class="title">Diferença entre Semântica e Sintaxe</h2>
+                <p>Na programação, a semântica e a sintaxe são dois conceitos fundamentais que se referem à forma e ao
+                    significado do código.</p>
+                <p>A sintaxe se refere à estrutura e à gramática do código, ou seja, à forma como ele é escrito e
+                    organizado.
+                    Por exemplo, a sintaxe do HTML define as regras para a escrita de tags, atributos e elementos.</p>
+                <p>Já a semântica se refere ao significado e à interpretação do código, ou seja, ao que ele representa e
+                    comunica. Por exemplo, a semântica do HTML define o significado e a função de cada tag e elemento.
+                </p>
+            </div>
+
         </div>
         <div class="region">
             <h2 class="title">Referências Bibliográficas</h2>

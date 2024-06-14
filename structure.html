@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/vs2015.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/styles/line-numbers.min.css">
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <script src="./script.js" defer></script>
+</head>
+
+<body>
+
+    <nav>
+        <span class="toggle">
+            <i class="ph ph-caret-left"></i>
+        </span>
+        <ul class="options"></ul>
+    </nav>
+
+    <header>
+        <h1 class="title">Material HTML</h1>
+        <h2>2 - Interpretando Layouts para HTML</h2>
+        <img src="./imgs/web.svg" alt="Webdesign">
+        <a href="https://www.giovanniguarnieri.com.br" target="_blank">By Giovanni Francesco Guarnieri</a>
+    </header>
+    <main>
+
+        <div class="region">
+            <h2 class="title">Do desenho para o HTML</h2>
+            <p>
+                A transição de um layout para o HTML é um dos primeiros passos para a criação de um site. Neste
+                processo, é importante entender a estrutura do layout e como ele pode ser interpretado em HTML.
+            </p>
+            <p>
+                Nesse momento não nos preocupamos com a estilização da página, mas sim com a estruturação do conteúdo.
+                A estruturação precisa envolver as melhores Tags HTML para cada tipo de conteúdo.
+                Melhorando a semântica e acessibilidade do site.
+            </p>
+            <p>
+                É normal que que um outro desenvolvedor ou designer possa interpretar o layout de forma diferente.
+                Desde que a estruturação do conteúdo seja feita de forma correta, a estilização pode ser feita de
+                diversas formas.
+            </p>
+            <p>
+                Neste exemplo, temos um layout de uma página de exemplo. O layout foi desenhado no Figma e agora será
+                interpretado em HTML.
+            </p>
+            <p>
+                Figma é uma ferramenta de design de interface do usuário baseada na Web. Ele oferece uma interface
+                gráfica do usuário, edição de vetores, prototipagem e ferramentas de colaboração.
+            </p>
+
+            <a href="https://www.figma.com/community/file/849342658995967505">
+                SaaSDesign - Figma Website Template - Landing Page (Free)
+                <i class="devicon-figma-plain colored"></i>
+            </a>
+        </div>
+
+        <div class="region">
+            <h2 class="title">Header da Página</h2>
+            <img src="./imgs/structure_ex1_header.png" alt="Header da Página de Exemplo" class="limit-img">
+            <p>
+                Como o desenvolvedor pode interpretar o layout do header da página em HTML?
+            </p>
+
+            <pre><code class="html">
+                <pre><code class="html">
+                &lt;header&gt;
+                    &lt;nav&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;
+                                &lt;a href="#"&gt;Home&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li&gt;
+                                &lt;a href="#"&gt;About&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li&gt;
+                                &lt;a href="#"&gt;Contact&lt;/a&gt;
+                            &lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/nav&gt;
+                    &lt;span class="logo"&gt;
+                        Landing
+                    &lt;/span&gt;
+                    &lt;button class="btn-primary"&gt;
+                        Buy Now
+                    &lt;/button&gt;
+                &lt;/header&gt;
+                </code></pre>
+            </code>
+            </pre>
+
+        </div>
+
+        <div class="region">
+            <h2 class="title">Section 1 - Main</h2>
+            <img src="./imgs/structure_ex1_main.png" alt="Main da Página de Exemplo" class="limit-img">
+            <p>
+                Antes do código, podemos dividir a página em seções. Cada agrupamento pode ser representada por uma div.
+                Um código bem dividido pode ser mais fácil de ser estilizado e mantido. Além disso, a divisão em seções
+                pode facilitar a interpretação do layout.
+            </p>
+            <p>
+                Como o desenvolvedor pode interpretar o layout do main da página em HTML?
+            </p>
+            <img src="./imgs/structure_ex1_main_div.png" alt="Divisão da Página Main de Exemplo" class="limit-img">
+
+            <pre>
+                <code class="html">
+                &lt;main&gt;
+                    &lt;section&gt;
+                        &lt;div class="description"&gt;
+                            &lt;h1&gt;Introduce Your Product Quickly &amp; Effectively&lt;/h1&gt;
+                            &lt;p&gt;
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+                                Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus 
+                            &lt;/p&gt;
+                            &lt;p&gt;
+                                mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+                            &lt;/p&gt;
+                            &lt;div class="buttons-area"&gt;
+                                &lt;button class="btn-primary"&gt;Purchase UI Kit&lt;/button&gt;
+                                &lt;button class="btn-secondary"&gt;Learn More&lt;/button&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class="image-area"&gt;
+                            &lt;img src="#" alt="Imagem chamativa"&gt;
+                        &lt;/div&gt;
+                    &lt;/section&gt;
+                &lt;/main&gt;
+                </code>
+            </pre>
+        </div>
+
+        <div class="region">
+            <h2 class="title">Section 2 - Main</h2>
+            <img src="./imgs/structure_ex1_main_s2.png" alt="Main da Página de Exemplo" class="limit-img">
+            <p>
+                Como essa parte também faz parte da main, essa section seria adicionada dentro da main já criada no
+                código anterior
+            </p>
+            <p>
+                Como o desenvolvedor pode interpretar o layout do main da página em HTML?
+            </p>
+            <img src="./imgs/structure_ex1_main_s2_div.png" alt="Divisão da Página Main de Exemplo" class="limit-img">
+
+            <pre>
+                <code>
+                &lt;section&gt;
+                    &lt;div class="description"&gt;
+                        &lt;h1&gt;Light, Fast &amp; Powerful&lt;/h1&gt;
+                        &lt;p&gt;
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+                            Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus 
+                        &lt;/p&gt;
+                        &lt;p&gt;
+                            mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+                        &lt;/p&gt;
+                        &lt;div class="items"&gt;
+                            &lt;div class="item"&gt;
+                                &lt;img src="#" alt="Imagem da opção"&gt;
+                                &lt;h2&gt;Title Goes Here&lt;/h2&gt;
+                                &lt;p&gt;
+                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+                                &lt;/p&gt;
+                            &lt;/div&gt;
+                            &lt;div class="item"&gt;
+                                &lt;img src="#" alt="Imagem da opção"&gt;
+                                &lt;h2&gt;Title Goes Here&lt;/h2&gt;
+                                &lt;p&gt;
+                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+                                &lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="image-area"&gt;
+                        &lt;img src="#" alt="Imagem chamativa"&gt;
+                    &lt;/div&gt;
+                &lt;/section&gt;
+                </code>
+            </pre>
+        </div>
+
+        <div class="region">
+            <h2 class="title">Footer</h2>
+            <img src="./imgs/structure_ex1_footer.png" alt="Footer da Página de Exemplo" class="limit-img">
+            <p>
+                Como o desenvolvedor pode interpretar o layout do footer da página em HTML?
+            </p>
+            <img src="./imgs/structure_ex1_footer_div.png" alt="Footer da Página - Dividido" class="limit-img">
+
+            <pre>
+                <code>
+                &lt;footer&gt;
+                    &lt;div class="top-content"&gt;
+                        &lt;span&gt;
+                            &amp;copy; 2024 Yourcompany
+                        &lt;/span&gt;
+                        &lt;span class="logo"&gt;
+                            Landing
+                        &lt;/span&gt;
+                        &lt;button class="btn"&gt;
+                            Purchase now
+                        &lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;div class="bottom-content"&gt;
+                        &lt;nav&gt;
+                            &lt;ul&gt;
+                                &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/nav&gt;
+                        &lt;nav&gt;
+                            &lt;ul&gt;
+                                &lt;li&gt;&lt;a href="#"&gt;&lt;img src="#" alt="Facebook"&gt;&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href="#"&gt;&lt;img src="#" alt="LinkedIn"&gt;&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href="#"&gt;&lt;img src="#" alt="Twitter"&gt;&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href="#"&gt;&lt;img src="#" alt="Youtube"&gt;&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href="#"&gt;&lt;img src="#" alt="Instagram"&gt;&lt;/a&gt;&lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/nav&gt;
+                    &lt;/div&gt;
+                &lt;/footer&gt;
+                </code>
+            </pre>
+
+        </div>
+
+        <div class="region">
+            <div class="title">HTML completo da página</div>
+            <pre>
+                <code>
+                &lt;!DOCTYPE html&gt;
+                &lt;html lang="pt-br"&gt;
+                &lt;head&gt;
+                    &lt;meta charset="UTF-8"&gt;
+                    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                    &lt;link rel="stylesheet" href="style.css"&gt;
+                    &lt;title&gt;Página de exemplo&lt;/title&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+
+                    &lt;header&gt;
+                        &lt;nav&gt;
+                            &lt;ul&gt;
+                                &lt;li&gt;
+                                    &lt;a href="#"&gt;Home&lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href="#"&gt;About&lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href="#"&gt;Contact&lt;/a&gt;
+                                &lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/nav&gt;
+                        &lt;span class="logo"&gt;
+                            Landing
+                        &lt;/span&gt;
+                        &lt;button class="btn-primary"&gt;
+                            Buy Now
+                        &lt;/button&gt;
+                    &lt;/header&gt;
+
+                    &lt;main&gt;
+                        &lt;section&gt;
+                            &lt;div class="description"&gt;
+                                &lt;h1&gt;Introduce Your Product Quickly &amp; Effectively&lt;/h1&gt;
+                                &lt;p&gt;
+                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+                                    Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus 
+                                &lt;/p&gt;
+                                &lt;p&gt;
+                                    mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+                                &lt;/p&gt;
+                                &lt;div class="buttons-area"&gt;
+                                    &lt;button class="btn-primary"&gt;Purchase UI Kit&lt;/button&gt;
+                                    &lt;button class="btn-secondary"&gt;Learn More&lt;/button&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class="image-area"&gt;
+                                &lt;img src="#" alt="Imagem chamativa"&gt;
+                            &lt;/div&gt;
+                        &lt;/section&gt;
+                        &lt;section&gt;
+                            &lt;div class="description"&gt;
+                                &lt;h1&gt;Light, Fast &amp; Powerful&lt;/h1&gt;
+                                &lt;p&gt;
+                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+                                    Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus 
+                                &lt;/p&gt;
+                                &lt;p&gt;
+                                    mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+                                &lt;/p&gt;
+                                &lt;div class="items"&gt;
+                                    &lt;div class="item"&gt;
+                                        &lt;img src="#" alt="Imagem da opção"&gt;
+                                        &lt;h2&gt;Title Goes Here&lt;/h2&gt;
+                                        &lt;p&gt;
+                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+                                        &lt;/p&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="item"&gt;
+                                        &lt;img src="#" alt="Imagem da opção"&gt;
+                                        &lt;h2&gt;Title Goes Here&lt;/h2&gt;
+                                        &lt;p&gt;
+                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+                                        &lt;/p&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class="image-area"&gt;
+                                &lt;img src="#" alt="Imagem chamativa"&gt;
+                            &lt;/div&gt;
+                        &lt;/section&gt;
+                    &lt;/main&gt;
+                    &lt;footer&gt;
+                    &lt;div class="top-content"&gt;
+                        &lt;span&gt;
+                            &amp;copy; 2024 Yourcompany
+                        &lt;/span&gt;
+                        &lt;span class="logo"&gt;
+                            Landing
+                        &lt;/span&gt;
+                        &lt;button class="btn"&gt;
+                            Purchase now
+                        &lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;div class="bottom-content"&gt;
+                        &lt;nav&gt;
+                            &lt;ul&gt;
+                                &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/nav&gt;
+                        &lt;nav&gt;
+                            &lt;ul&gt;
+                                &lt;li&gt;&lt;a href="#"&gt;&lt;img src="#" alt="Facebook"&gt;&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href="#"&gt;&lt;img src="#" alt="LinkedIn"&gt;&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href="#"&gt;&lt;img src="#" alt="Twitter"&gt;&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href="#"&gt;&lt;img src="#" alt="Youtube"&gt;&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href="#"&gt;&lt;img src="#" alt="Instagram"&gt;&lt;/a&gt;&lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/nav&gt;
+                    &lt;/div&gt;
+                &lt;/footer&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+                </code>
+            </pre>
+        </div>
+
+        <div class="region">
+            <h2 class="title">Referências Bibliográficas</h2>
+            <a href="https://undraw.co/illustrations">Illustrations by unDraw</a> <br />
+            <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML">MDN Web Docs - HTML</a><br />
+            <a href="https://www.w3schools.com/html/">W3Schools - HTML</a><br />
+            <a href="https://michalsnik.github.io/aos/">AOS - Animate on Scroll Library</a><br />
+            <a href="https://www.figma.com/community/file/849342658995967505">SaaSDesign - Figma Website Template -
+                Landing Page (Free)</a><br />
+        </div>
+    </main>
+
+    <footer>
+        <p>Desenvolvido por Giovanni Francesco Guarnieri</p>
+    </footer>
+
+</body>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+</html>

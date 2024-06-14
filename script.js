@@ -1,5 +1,4 @@
-hljs.initHighlightingOnLoad();
-hljs.initLineNumbersOnLoad();
+
 
 const allRegion = document.querySelectorAll('.region');
 allRegion.forEach((region, i) => {
@@ -24,3 +23,6 @@ btnToggle.addEventListener('click', () => {
 });
 
 AOS.init();
+
+hljs.highlightAll();
+hljs.initLineNumbersOnLoad();
