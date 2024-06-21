@@ -39,27 +39,273 @@
         <div class="region">
             <h2 class="title">O que é BoxModel?</h2>
             <p>O Box Model é um conceito fundamental do CSS que define como os elementos HTML são renderizados na tela.
-                Cada elemento HTML é composto por quatro partes principais: conteúdo, padding, border e margin. O conteúdo
-                é a área interna do elemento, onde o texto e as imagens são exibidos. O padding é a área entre o conteúdo e
-                a borda, que pode ser preenchida com cor ou imagem. A borda é a linha que envolve o elemento, que pode ser
-                estilizada com cor, largura e estilo. A margem é a área externa do elemento, que define o espaçamento entre
+                Cada elemento HTML é composto por quatro partes principais: conteúdo, padding, border e margin. O
+                conteúdo
+                é a área interna do elemento, onde o texto e as imagens são exibidos. O padding é a área entre o
+                conteúdo e
+                a borda, que pode ser preenchida com cor ou imagem. A borda é a linha que envolve o elemento, que pode
+                ser
+                estilizada com cor, largura e estilo. A margem é a área externa do elemento, que define o espaçamento
+                entre
                 os elementos vizinhos.</p>
+            <img src="./imgs/boxmodel.png" class="limit-img">
         </div>
 
         <div class="region">
             <h2 class="title">BoxModel em elementos Inline e Block</h2>
-            <p>Como comentado no material de HTML, os elementos HTML são divididos em duas categorias principais: inline e block. Elementos inline são
-                renderizados em linha, um após o outro, enquanto elementos block são renderizados em blocos, um abaixo do
-                outro. <b>Elementos inline não respeitam o Box Model</b>, pois não têm padding, border ou margin. <b>Elementos block
-                respeitam o Box Model, pois têm padding, border e margin.</b></p>
+            <p>Como comentado no material de HTML, os elementos HTML são divididos em duas categorias principais: inline
+                e block. Elementos inline são
+                renderizados em linha, um após o outro, enquanto elementos block são renderizados em blocos, um abaixo
+                do
+                outro. <b>Elementos inline não respeitam o Box Model</b>, pois não têm padding, border ou margin.
+                <b>Elementos block
+                    respeitam o Box Model, pois têm padding, border e margin.</b>
+            </p>
         </div>
 
-       
+        <div class="region">
+            <h2 class="title">Width e Height</h2>
+            <p>As propriedades width e height CSS são utilizadas para definir a largura e a altura de um elemento HTML.
+                A largura e a altura podem ser definidas em pixels, porcentagem, ems ou outras unidades de medida.</p>
+            <ul>
+                <li>width: define a largura do elemento.</li>
+                <ul>
+                    <li>width: 100px;</li>
+                    <li>width: 50%;</li>
+                </ul>
+                <li>height: define a altura do elemento.</li>
+                <ul>
+                    <li>height: 100px;</li>
+                    <li>height: 30%;</li>
+                </ul>
+            </ul>
+            <p>
+                Quando é utilizado porcentagem para definir a largura e a altura, o elemento se ajusta ao tamanho do
+                elemento pai.
+            </p>
+            <p>
+                Exemplo de aplicação de width e height em btn
+            </p>
+            <pre><code class="css">
+/* Seletor */
+.btn {
+    /* Propriedade: Valor */
+    width: 100px;
+    height: 50px;
+}
+</code></pre>
+        </div>
+
+        <div class="region">
+            <h2 class="title">Margens</h2>
+            <p>As margens CSS são utilizadas para definir o espaçamento entre os elementos HTML. Existem várias
+                propriedades de margem CSS, como margin-top, margin-right, margin-bottom, margin-left, margin.</p>
+            <ul>
+                <li>Margem automática - Aplica margem automaticamente</li>
+                <ul>
+                    <li>margin: auto;</li>
+                    <li>margin-left: auto;</li>
+                    <li>margin-right: auto;</li>
+                </ul>
+                <li>margin-top: define o espaçamento superior.</li>
+                <ul>
+                    <li>margin-top: 10px;</li>
+                </ul>
+                <li>margin-right: define o espaçamento direito.</li>
+                <ul>
+                    <li>margin-right: 20px;</li>
+                </ul>
+                <li>margin-bottom: define o espaçamento inferior.</li>
+                <ul>
+                    <li>margin-bottom: 30px;</li>
+                </ul>
+                <li>margin-left: define o espaçamento esquerdo.</li>
+                <ul>
+                    <li>margin-left: 40px;</li>
+                </ul>
+                <li>Margem: modo compilado (y, x)</li>
+                <ul>
+                    <li>margin: 0 auto;</li>
+                </ul>
+                <li>Margem: modo compilado (top, right, bottom, left)</li>
+                <ul>
+                    <li>margin: 10px 20px 30px 40px;</li>
+                </ul>
+            </ul>
+            <p>
+                Exemplo de aplicação de margem em btn
+            </p>
+            <pre><code class="css">
+/* Seletor */
+.btn {
+    /* Propriedade: Valor */
+    margin: 10px 20px 30px 40px;
+}
+</code></pre>
+        </div>
+
+        <div class="region">
+            <h2 class="title">Padding</h2>
+            <p>O padding CSS é utilizado para definir o espaçamento entre o conteúdo e a borda de um elemento HTML.
+                Existem várias propriedades de padding CSS, como padding-top, padding-right, padding-bottom,
+                padding-left, padding.</p>
+            <ul>
+                <li>padding-top: define o espaçamento superior.</li>
+                <ul>
+                    <li>padding-top: 10px;</li>
+                </ul>
+                <li>padding-right: define o espaçamento direito.</li>
+                <ul>
+                    <li>padding-right: 20px;</li>
+                </ul>
+                <li>padding-bottom: define o espaçamento inferior.</li>
+                <ul>
+                    <li>padding-bottom: 30px;</li>
+                </ul>
+                <li>padding-left: define o espaçamento esquerdo.</li>
+                <ul>
+                    <li>padding-left: 40px;</li>
+                </ul>
+                <li>Padding: modo compilado (y, x)</li>
+                <ul>
+                    <li>padding: 10px 20px;</li>
+                </ul>
+                <li>Padding: modo compilado (top, right, bottom, left)</li>
+                <ul>
+                    <li>padding: 10px 20px 30px 40px;</li>
+                </ul>
+            </ul>
+            <p>
+                Exemplo de aplicação de padding em btn
+            </p>
+            <pre><code class="css">
+/* Seletor */
+.btn {
+    /* Propriedade: Valor */
+    padding: 10px 20px 30px 40px;
+}
+</code></pre>
+
+        </div>
+
+        <div class="region">
+            <h2 class="title">Border</h2>
+            <p>A borda CSS é utilizada para definir a linha que envolve um elemento HTML. Existem várias propriedades
+                de
+                borda CSS, como border-top, border-right, border-bottom, border-left, border.</p>
+            <ul>
+                <li>border-top: define a borda superior.</li>
+                <ul>
+                    <li>border-top: 1px solid #000;</li>
+                </ul>
+                <li>border-right: define a borda direita.</li>
+                <ul>
+                    <li>border-right: 2px solid #000;</li>
+                </ul>
+                <li>border-bottom: define a borda inferior.</li>
+                <ul>
+                    <li>border-bottom: 3px solid #000;</li>
+                </ul>
+                <li>border-left: define a borda esquerda.</li>
+                <ul>
+                    <li>border-left: 4px solid #000;</li>
+                </ul>
+                <li>Border: modo compilado </li>
+                <ul>
+                    <li>border: 1px solid #000;</li>
+                </ul>
+            </ul>
+            <p>
+                Exemplo de aplicação de border em btn
+            </p>
+            <pre><code class="css">
+/* Seletor */
+.btn {
+    /* Propriedade: Valor */
+    border: 1px solid #000;
+}
+</code></pre>
+        </div>
+
+        <div class="region">
+            <h2 class="title">Display Flex</h2>
+            <p>O display flex é uma propriedade CSS que permite criar layouts flexíveis. Com o display flex, é possível
+                alinhar os elementos HTML horizontalmente ou verticalmente, distribuir o espaço disponível entre os
+                elementos e reorganizar os elementos HTML em diferentes tamanhos de tela.</p>
+            <p>Para utilizar o display flex, basta adicionar a propriedade display: flex; ao seletor CSS desejado.</p>
+            <ul>
+                <li>display: flex; - Define o elemento como um container flexível.</li>
+                <li>flex-direction: row; - Define a direção dos elementos como linha.</li>
+                <li>flex-direction: column; - Define a direção dos elementos como coluna.</li>
+                <li>flex-wrap: wrap; - Quebra os elementos em linhas.</li>
+                <li>flex-wrap: nowrap; - Não quebra os elementos em linhas.</li>
+                <li>justify-content: center; - Alinha os elementos no centro.</li>
+                <li>justify-content: flex-start; - Alinha os elementos no início.</li>
+                <li>justify-content: flex-end; - Alinha os elementos no final.</li>
+                <li>justify-content: space-between; - Distribui o espaço entre os elementos.</li>
+                <li>justify-content: space-around; - Distribui o espaço ao redor dos elementos.</li>
+                <li>align-items: center; - Alinha os elementos verticalmente no centro.</li>
+                <li>align-items: flex-start; - Alinha os elementos verticalmente no início.</li>
+                <li>align-items: flex-end; - Alinha os elementos verticalmente no final.</li>
+                <li>gap: 16px; - Aplica espaço entre os itens</li>
+            </ul>
+            <img src="./imgs/justify-content.png" class="limit-img">
+            <p>
+                Quando o display flex é aplicado a um elemento, todos os elementos filhos desse elemento se tornam
+                flexíveis. Isso significa que os elementos filhos podem ser alinhados horizontalmente ou verticalmente,
+                distribuídos no espaço disponível e reorganizados em diferentes tamanhos de tela.
+            </p>
+            <p>
+                Quando o flex-direction é aplicado, o justify-content inverte a direção de alinhamento. Por exemplo, se
+                o flex-direction for row e o justify-content for center, os elementos serão alinhados verticalmente no
+                centro. Se o flex-direction for column e o justify-content for center, os elementos serão alinhados
+                horizontalmente no centro. 
+                O mesmo se aplica ao align-items, que inverte a direção de alinhamento. Por exemplo, se o flex-direction
+                for row e o align-items for center, os elementos serão alinhados verticalmente no centro. Se o flex-direction
+                for column e o align-items for center, os elementos serão alinhados horizontalmente no centro.
+            </p>
+            <p>
+                Exemplo de aplicação de display flex em container
+            </p>
+            <pre><code class="css">
+/* Seletor */
+.container {
+    /* Propriedade: Valor */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+</code></pre>
+        </div>
+
+
+        <div class="region">
+            <h2 class="title">Exemplo - Flexbox - Interpretação CSS com base em imagem</h2>
+            <img src="./imgs/ex1_css.png" alt="Exemplo 1 de CSS" class="limit-img">
+        </div>
+
+        <div class="region">
+            <h2 class="title">Atividade de Fixação CSS</h2>
+            <p>Desenvolver o HTML e CSS da imagem abaixo</p>
+            <img src="./imgs/ex1-css-section.png" alt="Exemplo 1 de CSS" class="limit-img">
+            <h3>Material</h3>
+            <ul>
+                <li>Cor do texto: #6F7CB2;</li>
+                <li>Cor do fundo: #FFFFFF;</li>
+                <li>Baixar imagem lateral: <a href="./imgs/ex1-css.png" download>Baixar</a></li>
+                <li>Baixar imagem item: <a href="./imgs/ex1-icon.png" download>Baixar</a></li>
+            </ul>
+
+        </div>
+
         <div class="region">
             <h2 class="title">Referências Bibliográficas</h2>
+            <a href="https://medium.com/@lainakarosic/getting-started-with-css-flexbox-basics-58d875a574ce">
+                Getting Started with CSS Flexbox Basics
+            </a>
             <a href="https://undraw.co/illustrations">Illustrations by unDraw</a> <br />
-            <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML">MDN Web Docs - HTML</a><br />
-            <a href="https://www.w3schools.com/html/">W3Schools - HTML</a><br />
+            <a href="https://www.w3schools.com/css/">W3Schools - HTML</a><br />
             <a href="https://michalsnik.github.io/aos/">AOS - Animate on Scroll Library</a><br />
             <a href="https://www.figma.com/community/file/849342658995967505">SaaSDesign - Figma Website Template -
                 Landing Page (Free)</a><br />
