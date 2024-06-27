@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <title>PHP - Introdução</title>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/monokai-sublime.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/styles/line-numbers.min.css">
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+</head>
+
+<body>
+
+    <nav>
+        <span class="toggle">
+            <i class="ph ph-caret-left"></i>
+        </span>
+        <ul class="options"></ul>
+    </nav>
+
+    <header>
+        <h1 class="title">PHP</h1>
+        <h2>1 - Introdução</h2>
+        <img src="./imgs/backend.svg" alt="Webdesign">
+        <a href="https://www.giovanniguarnieri.com.br" target="_blank">By Giovanni Francesco Guarnieri</a>
+    </header>
+    <main>
+        <div class="region">
+            <h2 id="inicio" class="title">O que é PHP?</h2>
+            <p>
+                PHP é uma linguagem de programação de uso geral, amplamente utilizada para o desenvolvimento de
+                aplicações web. Ela é uma linguagem de script do lado do servidor, o que significa que o código é
+                executado no
+                servidor antes de ser enviado para o navegador do usuário.
+            </p>
+            <p>
+                Como PHP é uma linguagem executada no servidor, ela é capaz de interagir com bancos de dados, manipular
+                arquivos e gerar conteúdo dinâmico. Isso a torna uma ferramenta poderosa para a criação de sites e
+                aplicações web interativas e dinâmicas.
+            </p>
+        </div>
+        <div class="region">
+            <h2 class="title">Como executarmos código localmente?</h2>
+            <p>
+                Para trabalharmos com PHP localmente é necessário instalar um servidor web, como o Apache,
+                um interpretador PHP e um servidor de banco de dados, como o MySQL. Existem pacotes que já incluem esses
+                servidores, como o XAMPP e o
+                WampServer.
+            </p>
+            <p class="list-images">
+                <img src="./imgs/wamp.webp" alt="WampServer" class="logo">
+                <img src="./imgs/xampp.svg" alt="XAMPP" class="logo">
+            </p>
+        </div>
+        <div class="region">
+            <h2 class="title">Onde colocarmos os códigos PHP?</h2>
+            <p>
+                Os códigos PHP devem ser colocados em arquivos com a extensão <code>.php</code>. Esses arquivos devem
+                ser
+                colocados na pasta do servidor web, que geralmente é a pasta <code>c:/xampp/htdocs/</code> no caso do
+                Apache.
+                No WAMP Server, a pasta é <code>c:/wamp64/www/</code>.
+                Para
+                acessar o código, basta digitar o endereço do servidor web no navegador, seguido do caminho do arquivo.
+            </p>
+        </div>
+        <div class="region">
+            <h2 class="title">Sintaxe Básica</h2>
+            <p>
+                O código PHP é delimitado por tags <code>&lt;?php</code> e <code>?&gt;</code>. O código PHP pode ser
+                inserido em qualquer lugar do arquivo HTML.
+            </p>
+            <pre><code class="php">
+&lt;?php
+    echo "Olá, Mundo!";
+?&gt;
+            </code></pre>
+            <p>Desde que o arquivo esteja com a extensão .php, é possível inserir código PHP em qualquer lugar do
+                arquivo HTML.</p>
+            <p>
+                Por exemplo:
+            </p>
+            <pre><code class="html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Exemplo&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;?php
+        echo "Olá, Mundo!";
+    ?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                </code></pre>
+
+        </div>
+        <div class="region">
+            <h2 class="title">Criação de variável</h2>
+            <p>
+                Para criar uma variável em PHP, basta usar o caractere <code>$</code> seguido do nome da variável.
+            </p>
+            <pre><code class="php">
+&lt;?php
+    $nome = "Giovanni";
+    echo $nome;
+?&gt;
+            </code></pre>
+            <p>Não é necessário declarar o tipo da variável, pois PHP é uma linguagem de tipagem dinâmica. Isso quer
+                dizer que o tipo da variável é definido no momento da atribuição.</p>
+        </div>
+
+        <div class="region">
+            <h2 class="title">Estruturas Condicionais</h2>
+            <p>
+                De maneira geral, as estruturas condicionais são parecidas com as de outras linguagens de programação.
+                Em PHP, temos as estruturas <code>if</code>, <code>else</code> e <code>else if</code>.
+            </p>
+            <pre><code class="php">
+&lt;?php
+    $idade = 18;
+    if ($idade &gt;= 18) {
+        echo "Maior de idade";
+    } else {
+        echo "Menor de idade";
+    }
+?&gt;
+            </code></pre>
+            <p>Não é necessário declarar o tipo da variável, pois PHP é uma linguagem de tipagem dinâmica. Isso quer
+                dizer que o tipo da variável é definido no momento da atribuição.</p>
+        </div>
+        <div class="region">
+            <h2 class="title">Operadores Relacionais e Lógicos</h2>
+            <p>
+                Lista de operadores relacionais:
+            </p>
+            <p>
+                <ul>
+                    <li><code>==</code> - Igual</li>
+                    <li><code>!=</code> - Diferente</li>
+                    <li><code>&gt;</code> - Maior</li>
+                    <li><code>&lt;</code> - Menor</li>
+                    <li><code>&gt;=</code> - Maior ou igual</li>
+                    <li><code>&lt;=</code> - Menor ou igual</li>
+                </ul>
+            </p>
+            <p>
+                Lista dos principais operadores lógicos:
+            </p>
+            <p>
+                <ul>
+                    <li><code>&&</code> - E</li>
+                    <li><code>||</code> - Ou</li>
+                    <li><code>!</code> - Negação</li>
+                </ul>
+            <pre><code class="php">
+&lt;?php
+    $idade = 18;
+    if ($idade &gt;= 18) {
+        echo "Maior de idade";
+    } else {
+        echo "Menor de idade";
+    }
+?&gt;
+            </code></pre>
+            <p>Não é necessário declarar o tipo da variável, pois PHP é uma linguagem de tipagem dinâmica. Isso quer
+                dizer que o tipo da variável é definido no momento da atribuição.</p>
+        </div>
+        </div>
+        <div class="region">
+            <h2 class="title">Referências Bibliográficas</h2>
+            <a href="https://www.w3schools.com/php/">W3Schools - PHP</a><br />
+            <a href="https://medium.com/@hardeylarning/introduction-to-php-48666b582725">INTRODUCTION TO PHP</a><br />
+        </div>
+    </main>
+
+    <footer>
+        <p>Desenvolvido por Giovanni Francesco Guarnieri</p>
+    </footer>
+
+</body>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+</html>

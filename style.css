@@ -127,6 +127,18 @@ a {
     padding-bottom: 5rem;
 }
 
+.list-images{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 5rem;
+    gap: 1rem;
+}
+
+.list-images img{
+    height: 100%;
+}
+
 
 footer {
     background-color: var(--color-secondary);
