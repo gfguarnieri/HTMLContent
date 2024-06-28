@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <title>PHP com Banco de Dados</title>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/monokai-sublime.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/styles/line-numbers.min.css">
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+</head>
+
+<body>
+
+    <nav>
+        <span class="toggle">
+            <i class="ph ph-caret-left"></i>
+        </span>
+        <ul class="options"></ul>
+    </nav>
+
+    <header>
+        <h1 class="title">PHP</h1>
+        <h2>2 - PHP + Banco de Dados</h2>
+        <img src="./imgs/backend.svg" alt="Webdesign">
+        <a href="https://www.giovanniguarnieri.com.br" target="_blank">By Giovanni Francesco Guarnieri</a>
+    </header>
+    <main>
+
+        <div class="region">
+            <h2 class="title">PHP com Banco de Dados</h2>
+            <p>
+                Podemos conectar o PHP com um banco de dados para realizar operações de leitura, escrita, atualização e
+                exclusão de dados. Para isso, podemos utilizar mysqli ou PDO.
+            </p>
+            <p>
+                PDO e MySQLi são duas extensões de PHP que permitem que você acesse bancos de dados.
+                PDO (PHP Data Objects) é uma extensão de banco de dados abstrata que fornece uma interface para se
+                comunicar com muitos tipos de bancos de dados
+                como MySql, SQL Server, Oracle etc.
+                MySQLi é uma extensão melhorada do MySQL que oferece vários benefícios, entretanto, é específica para o
+                MySQL.
+            </p>
+            <p>
+                Nesse material utilizaremos PDO para conectar o PHP com o banco de dados, pois é mais genérico e pode
+                ser
+                utilizado com diversos tipos de bancos de dados.
+            </p>
+        </div>
+
+        <div class="region">
+            <h2 class="title">O que vamos criar?</h2>
+            <p>
+                Nesse material, vamos criar um sistema simples de cadastro de alunos utilizando PHP e MySQL. O sistema
+                terá
+                as seguintes funcionalidades:
+            </p>
+            <ul>
+                <li>Cadastrar um aluno com nome, email e data de nascimento;</li>
+                <li>Listar os alunos cadastrados;</li>
+                <li>Excluir um aluno cadastrado.</li>
+            </ul>
+            <p>
+                Para isso, vamos criar um formulário de cadastro de alunos, um script para cadastrar o aluno no banco de
+                dados, um script para listar os alunos cadastrados e um script para excluir um aluno do banco de dados.
+            </p>
+            <p>
+                Para visualizar simulação do sistema: <a href="./imgs/simulacao.gif" target="_blank">Clique
+                    aqui</a>
+            </p>
+        </div>
+
+        <div class="region">
+            <h2 class="title">Banco de Dados para esse material</h2>
+            <p>
+                Para esse material, utilizaremos um banco de dados chamado "escola" com uma tabela chamada "aluno".
+                A tabela "usuarios" possui os campos "idaluno", "nome", "email" e "datanascimento".
+            </p>
+            <p>
+                Para criar o banco de dados e a tabela, utilize o seguinte código SQL:
+            </p>
+            <pre><code class="sql">
+CREATE DATABASE escola;
+USE escola;
+CREATE TABLE aluno (
+    idaluno INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    datanascimento DATE NOT NULL
+);
+            </code></pre>
+        </div>
+
+        <div class="region">
+            <h2 class="title">Arquivo de Conexão utilizando PDO</h2>
+            <p>
+                Para conectar o PHP com o banco de dados, podemos criar um arquivo de conexão que seja utilizado
+                posteriormente em outros locais. Para esse material utilizaremos o código abaixo:
+            <pre><code class="php">
+&lt;?php
+$servidor = "localhost";
+$usuario = "root";
+$senha = "";
+$banco = "escola";
+
+try {
+    $conexao = new PDO("mysql:host=$servidor;dbname=$banco", $usuario, $senha);
+} catch(PDOException $e) {
+    echo "Conexão falhou: " . $e-&gt;getMessage();
+    exit;
+}
+?&gt;
+            </code></pre>
+
+            </p>
+            <p>
+                No código acima, substitua "nomeDoBanco" pelo nome do banco de dados que você deseja conectar.
+                As informações de servidor, usuário e senha devem ser alteradas de acordo com as configurações do seu
+                banco de dados. Caso você esteja utilizando o MySQL, o servidor padrão é "localhost", o usuário padrão é
+                "root" e a senha padrão é vazia.
+            </p>
+            <p>
+                O código acima tenta conectar ao banco de dados e, caso a conexão falhe, exibe uma mensagem de erro e
+                cancela a execução do código.
+            </p>
+
+        </div>
+
+        <div class="region">
+            <h2 class="title">
+                Formulário de Cadastro de Alunos (index.php) e Script de Cadastro (cadastrar.php)
+            </h2>
+            <p>
+                Para cadastrar um aluno no banco de dados, podemos utilizar um formulário HTML com campos para inserir
+                o nome, email e data de nascimento do aluno. Veja o código abaixo:
+            </p>
+            <pre><code class="html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-br"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Lista de Alunos&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;form action="cadastrar.php" method="post"&gt;   
+    Nome: &lt;input type="text" name="nome" required&gt;&lt;br&gt;
+    Email: &lt;input type="email" name="email" required&gt;&lt;br&gt;
+    Data de Nascimento: &lt;input type="date" name="datanascimento" required&gt;&lt;br&gt;
+    &lt;input type="submit" value="Cadastrar"&gt;
+    &lt;input type="reset" value="Limpar"&gt;
+&lt;/form&gt;
+
+&lt;a href="listar.php"&gt;Lista de Alunos Cadastrados&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </code></pre>
+            <p>
+                O formulário acima envia os dados para o arquivo "cadastrar.php" utilizando o método POST.
+            </p>
+
+            <pre><code class="php">           
+&lt;?php
+    if (isset($_POST["nome"], $_POST["email"], $_POST["datanascimento"])){
+        $nome = $_POST["nome"];
+        $email = $_POST["email"];
+        $datanascimento = $_POST["datanascimento"];
+
+        // Include the connection file
+        include 'conexao.php';
+
+        $sql = "INSERT INTO aluno (nome, email, datanascimento) VALUES (:nome, :email, :datanascimento)";
+
+        $query = $conexao->prepare($sql);
+
+        $query->bindParam(':nome', $nome);
+        $query->bindParam(':email', $email);
+        $query->bindParam(':datanascimento', $datanascimento);
+
+        if ($query->execute()) {
+            echo "Aluno cadastrado com sucesso! &lt;br&gt;";
+            echo "&lt;a href='index.php'&gt;Voltar&lt;/a&gt;";
+        } else {
+            echo "Erro ao cadastrar aluno. &lt;br&gt;";
+            echo "&lt;a href='index.php'&gt;Voltar&lt;/a&gt;";
+        }
+    }
+    else {
+        echo "Preencha todos os campos. &lt;br&gt;";
+        echo "&lt;a href='index.php'&gt;Voltar&lt;/a&gt;";
+    }
+?&gt;
+</code></pre>
+
+            <p>
+                O código acima recebe os dados enviados pelo formulário e insere no banco de dados. Para isso, o código
+                inclui o arquivo de conexão e executa uma query SQL para inserir os dados na tabela "aluno".
+            </p>
+
+            <p>
+                O código acima utiliza o método prepare do objeto PDO para preparar a query SQL. Em seguida, os valores
+                são
+                vinculados aos parâmetros da query utilizando o método bindParam. Por fim, a query é executada
+                utilizando o
+                método execute.
+            </p>
+
+        </div>
+
+        <div class="region">
+            <h2 class="title">Listar Alunos Cadastrados (listar.php)</h2>
+            <p>
+                Para listar os alunos cadastrados no banco de dados, podemos utilizar o seguinte código:
+            </p>
+            <pre><code class="php">
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-br"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Lista de Alunos&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;a href="index.php"&gt;Cadastrar aluno&lt;/a&gt;
+
+&lt;h1&gt;Lista de Alunos&lt;/h1&gt;            
+
+    &lt;?php
+    include 'conexao.php';
+
+    $sql = "SELECT * FROM aluno";
+
+    $query = $conexao->query($sql);
+
+    if ($query) {
+        while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
+            echo "ID: " . $row['idaluno'] . "&lt;br&gt;";
+            echo "Nome: " . $row['nome'] . "&lt;br&gt;";
+            echo "Email: " . $row['email'] . "&lt;br&gt;";
+            echo "Data de Nascimento: " . $row['datanascimento'] . "&lt;br&gt;";
+            echo "&lt;a href='excluir.php?id=" . $row['idaluno'] . "'&gt;Excluir Aluno&lt;/a&gt; &lt;br&gt;";
+            echo "&lt;br&gt;";
+        }
+    } else {
+        echo "Erro ao listar alunos. &lt;br&gt;";
+    }
+?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </code></pre>
+            <p>
+                O código acima executa uma query SQL para selecionar todos os alunos da tabela "aluno". Em seguida, os
+                dados são exibidos na tela utilizando um loop while.
+            </p>
+            <p>
+                Para cada aluno, é exibido o ID, nome, email e data de nascimento. Além disso, é exibido um link para
+                excluir o aluno.
+            </p>
+            <p>
+                O link de exclusão envia o ID do aluno para o arquivo "excluir.php" utilizando um parâmetro GET.
+            </p>
+        </div>
+
+        <div class="region">
+            <h2 class="title">Excluir Aluno (excluir.php)</h2>
+            <p>
+                Para excluir um aluno do banco de dados, podemos utilizar o seguinte código:
+            </p>
+            <pre><code class="php">
+&lt;?php
+    if (isset($_GET["id"])){
+        $id = $_GET["id"];
+
+        include 'conexao.php';
+
+        $sql = "DELETE FROM aluno WHERE idaluno = :id";
+
+        $query = $conexao->prepare($sql);
+
+        $query->bindParam(':id', $id);
+
+        if ($query->execute()) {
+            echo "Aluno excluído com sucesso! &lt;br&gt;";
+            echo "&lt;a href='listar.php'&gt;Voltar&lt;/a&gt;";
+        } else {
+            echo "Erro ao excluir aluno. &lt;br&gt;";
+            echo "&lt;a href='listar.php'&gt;Voltar&lt;/a&gt;";
+        }
+
+    }
+    else {
+        echo "ID do aluno não informado. &lt;br&gt;";
+        echo "&lt;a href='listar.php'&gt;Voltar&lt;/a&gt;";
+    }
+?&gt;
+            </code></pre>
+            <p>
+                O código acima recebe o ID do aluno a ser excluído através de um parâmetro GET. Em seguida, a query SQL
+                é
+                preparada e o ID é vinculado ao parâmetro da query. Por fim, a query é executada para excluir o aluno do
+                banco de dados.
+            </p>
+        </div>
+
+        <div class="region">
+            <h2 class="title">Resumo dos comandos PHP utilizados</h2>
+            <table>
+                <tr>
+                    <th>Comando PHP</th>
+                    <th>Descrição</th>
+                </tr>
+                <tr>
+                    <td><code>include</code></td>
+                    <td>inclui e avalia o arquivo especificado.</td>
+                </tr>
+                <tr>
+                    <td><code>isset</code></td>
+                    <td>verifica se uma variável está definida.</td>
+                </tr>
+                <tr>
+                    <td><code>$_POST</code></td>
+                    <td>variável global que contém dados enviados para o script via método POST.</td>
+                </tr>
+                <tr>
+                    <td><code>$_GET</code></td>
+                    <td>variável global que contém dados enviados para o script via método GET.</td>
+                </tr>
+                <tr>
+                    <td><code>prepare</code></td>
+                    <td>prepara uma sentença SQL para ser executada pelo método execute.</td>
+                </tr>
+                <tr>
+                    <td><code>bindParam</code></td>
+                    <td>vincula um parâmetro a um nome de variável.</td>
+                </tr>
+                <tr>
+                    <td><code>execute</code></td>
+                    <td>executa uma sentença preparada.</td>
+                </tr>
+                <tr>
+                    <td><code>query</code></td>
+                    <td>executa uma query SQL.</td>
+                </tr>
+                <tr>
+                    <td><code>fetch</code></td>
+                    <td>recupera a próxima linha de um conjunto de resultados.</td>
+                </tr>
+            </table>
+        </div>
+
+
+        <div class="region">
+            <h2 class="title">Referências Bibliográficas</h2>
+            <a href="https://www.w3schools.com/php/">W3Schools - PHP</a><br />
+            <a href="https://medium.com/@hardeylarning/introduction-to-php-48666b582725">INTRODUCTION TO
+                PHP</a><br />
+        </div>
+    </main>
+
+    <footer>
+        <p>Desenvolvido por Giovanni Francesco Guarnieri</p>
+    </footer>
+
+</body>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+</html>

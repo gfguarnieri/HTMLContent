@@ -11,6 +11,27 @@
     font-family: Roboto, sans-serif;
 }
 
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+th, td{
+    border: 1px solid #f5f5f5;
+    padding: 0.5rem;
+}
+
+table caption{
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: var(--color-primary);
+}
+
+th{
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
 
 pre > code {
     font-family: "Sans Mono", "Consolas", "Courier", monospace !important;
@@ -139,6 +160,9 @@ a {
     height: 100%;
 }
 
+code{
+    color: yellow;
+}
 
 footer {
     background-color: var(--color-secondary);

@@ -84,6 +84,9 @@
     echo "Olá, Mundo!";
 ?&gt;
             </code></pre>
+            <p>
+                O comando <code>echo</code> é usado para imprimir texto na tela.
+            </p>
             <p>Desde que o arquivo esteja com a extensão .php, é possível inserir código PHP em qualquer lugar do
                 arquivo HTML.</p>
             <p>
@@ -139,29 +142,94 @@
                 dizer que o tipo da variável é definido no momento da atribuição.</p>
         </div>
         <div class="region">
-            <h2 class="title">Operadores Relacionais e Lógicos</h2>
+            <h2 class="title">Operadores Matemáticos, Relacionais e Lógicos</h2>
             <p>
-                Lista de operadores relacionais:
+                PHP suporta os operadores matemáticos básicos, como adição, subtração, multiplicação e divisão. Além
+                disso, também suporta operadores relacionais e lógicos.
             </p>
             <p>
-                <ul>
-                    <li><code>==</code> - Igual</li>
-                    <li><code>!=</code> - Diferente</li>
-                    <li><code>&gt;</code> - Maior</li>
-                    <li><code>&lt;</code> - Menor</li>
-                    <li><code>&gt;=</code> - Maior ou igual</li>
-                    <li><code>&lt;=</code> - Menor ou igual</li>
-                </ul>
+                Lista de operadores matemáticos:
             </p>
             <p>
-                Lista dos principais operadores lógicos:
-            </p>
-            <p>
-                <ul>
-                    <li><code>&&</code> - E</li>
-                    <li><code>||</code> - Ou</li>
-                    <li><code>!</code> - Negação</li>
-                </ul>
+            <table>
+                <caption>Operadores Matemáticos</caption>
+                <tr>
+                    <th>Operador</th>
+                    <th>Descrição</th>
+                </tr>
+                <tr>
+                    <td><code>+</code></td>
+                    <td>Adição</td>
+                </tr>
+                <tr>
+                    <td><code>-</code></td>
+                    <td>Subtração</td>
+                </tr>
+                <tr>
+                    <td><code>*</code></td>
+                    <td>Multiplicação</td>
+                </tr>
+                <tr>
+                    <td><code>/</code></td>
+                    <td>Divisão</td>
+                </tr>
+                <tr>
+                    <td><code>%</code></td>
+                    <td>Módulo</td>
+                </tr>
+            </table>
+
+            <table>
+                <caption>Operadores Relacionais</caption>
+                <tr>
+                    <th>Operador</th>
+                    <th>Descrição</th>
+                </tr>
+                <tr>
+                    <td><code>==</code></td>
+                    <td>Igual</td>
+                </tr>
+                <tr>
+                    <td><code>!=</code></td>
+                    <td>Diferente</td>
+                </tr>
+                <tr>
+                    <td><code>&gt;</code></td>
+                    <td>Maior</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;</code></td>
+                    <td>Menor</td>
+                </tr>
+                <tr>
+                    <td><code>&gt;=</code></td>
+                    <td>Maior ou igual</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;=</code></td>
+                    <td>Menor ou igual</td>
+                </tr>
+            </table>
+
+            <table>
+                <caption>Operadores Lógicos</caption>
+                <tr>
+                    <th>Operador</th>
+                    <th>Descrição</th>
+                </tr>
+                <tr>
+                    <td><code>&amp;&amp;</code></td>
+                    <td>E</td>
+                </tr>
+                <tr>
+                    <td><code>||</code></td>
+                    <td>Ou</td>
+                </tr>
+                <tr>
+                    <td><code>!</code></td>
+                    <td>Negação</td>
+                </tr>
+            </table>
             <pre><code class="php">
 &lt;?php
     $idade = 18;
@@ -176,6 +244,136 @@
                 dizer que o tipo da variável é definido no momento da atribuição.</p>
         </div>
         </div>
+
+        <div class="region">
+            <h2 class="title">Variáveis Superglobais GET e POST</h2>
+            <p>
+                As variáveis superglobais <code>$_GET</code> e <code>$_POST</code> são usadas para coletar dados de
+                formulários HTML ou de requisições HTTP.
+            </p>
+            <p>
+                Essas variáveis são arrays associativos, o que significa que os dados são acessados por meio de chaves.
+                Essas chaves são os nomes dos dados enviados para o servidor.
+            </p>
+            <p>
+                A variável <code>$_GET</code> é usada para coletar dados enviados por um formulário HTML com o método
+                GET. Já a variável <code>$_POST</code> é usada para coletar dados enviados por um formulário HTML com o
+                método POST.
+            </p>
+            <p>
+                Exemplo de formulário HTML:
+            </p>
+            <pre><code class="html">
+&lt;form action="pagina.php" method="post"&gt;
+    Nome: &lt;input type="text" name="nome"&gt;
+    &lt;input type="submit"&gt;
+&lt;/form&gt;
+            </code></pre>
+            <p>
+                Exemplo de código PHP para coletar o valor do campo "nome" por POST:
+            </p>
+            <pre><code class="php">
+&lt;?php
+    $nome = $_POST['nome'];
+    echo $nome;
+?&gt;
+            </code></pre>
+
+            <p>
+                Exemplo de código PHP para coletar o valor do campo "nome" por GET:
+            </p>
+            <pre><code class="php">
+&lt;?php
+    $nome = $_GET['nome'];
+    echo $nome;
+?&gt;
+            </code></pre>
+
+            <p>
+                Os parâmetros GET são enviados na URL, enquanto os parâmetros POST são enviados no corpo da requisição.
+            </p>
+
+            <p>
+                O sinal de interrogação <code>?</code> é usado para separar a URL dos parâmetros GET. Os parâmetros são
+                separados por <code>&</code>.
+            </p>
+
+            <p>
+                Exemplo de URL: <code>http://localhost/pagina.php?nome=Giovanni&profissao=professor</code>
+            </p>
+
+        </div>
+
+        <div class="region">
+            <h2 class="title">
+                Verificar se variável está definida
+            </h2>
+            <p>
+                Para verificar se uma variável está definida, podemos usar a função <code>isset()</code>.
+            </p>
+            <pre><code class="php">
+&lt;?php
+    if (isset($nome)) {
+        echo "A variável está definida";
+    } else {
+        echo "A variável não está definida";
+    }
+?&gt;
+            </code></pre>
+        </div>
+
+        <div class="region">
+            <h2 class="title">
+                Exemplo de Calculadora com HTML, Requisição GET e PHP
+                <!-- O exemplo deve incluir estrutura condicional e escolha de operador matemático -->
+            </h2>
+            <p>
+                <img src="./imgs/simple_form.png" alt="Formulário simples">
+
+            </p>
+            <p>
+                Exemplo de formulário HTML:
+            </p>
+            <pre><code class="html">
+&lt;form action="calculadora.php" method="get"&gt;
+    Número 1: &lt;input type="number" name="num1" required&gt;&lt;br&gt;
+    Número 2: &lt;input type="number" name="num2" required&gt;&lt;br&gt;
+    Operação: &lt;select name="operacao" required&gt;
+        &lt;option value="soma"&gt;Soma&lt;/option&gt;
+        &lt;option value="subtracao"&gt;Subtração&lt;/option&gt;
+        &lt;option value="multiplicacao"&gt;Multiplicação&lt;/option&gt;
+        &lt;option value="divisao"&gt;Divisão&lt;/option&gt;
+    &lt;/select&gt;&lt;br&gt;
+    &lt;input type="submit" value="Calcular"&gt;
+    &lt;input type="reset" value="Limpar"&gt;
+&lt;/form&gt;
+            </code></pre>
+
+            <p>
+                Exemplo de código PHP para calcular a operação:
+            </p>
+            <pre><code class="php">
+&lt;?php
+    if(isset($_GET['num1'], $_GET['num2'], $_GET['operacao'])) {
+        $num1 = $_GET['num1'];
+        $num2 = $_GET['num2'];
+        $operacao = $_GET['operacao'];
+
+        if ($operacao == "soma") {
+            $resultado = $num1 + $num2;
+        } else if ($operacao == "subtracao") {
+            $resultado = $num1 - $num2;
+        } else if ($operacao == "multiplicacao") {
+            $resultado = $num1 * $num2;
+        } else if ($operacao == "divisao") {
+            $resultado = $num1 / $num2;
+        }
+        echo "O resultado da operação é: " . $resultado;
+    }else{
+        echo "Preencha todos os campos";
+    }
+        </div>
+
         <div class="region">
             <h2 class="title">Referências Bibliográficas</h2>
             <a href="https://www.w3schools.com/php/">W3Schools - PHP</a><br />

@@ -23,5 +23,6 @@ btnToggle.addEventListener('click', () => {
 });
 
 AOS.init();
+nav.classList.toggle('active');
 
 hljs.highlightAll();
