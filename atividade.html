@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <title>PHP - Introdução</title>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/monokai-sublime.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/styles/line-numbers.min.css">
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+</head>
+
+<body>
+
+    <nav>
+        <span class="toggle">
+            <i class="ph ph-caret-left"></i>
+        </span>
+        <ul class="options"></ul>
+    </nav>
+
+    <header>
+        <h1 class="title">Atividade de PHP</h1>
+        <h2>Vaquinha para festa junina</h2>
+        <img src="./imgs/junina.png" alt="Webdesign">
+        <a href="https://www.giovanniguarnieri.com.br" target="_blank">By Giovanni Francesco Guarnieri</a>
+    </header>
+    <main>
+        <div class="region">
+            <h2 id="inicio" class="title">Descrição da Atividade</h2>
+            <p>Desenvolva um sistema que simule uma vaquinha para uma festa junina. O sistema deve registrar:
+            <ul>
+                <li>Nome do colaborador</li>
+                <li>Valor da contribuição</li>
+                <li>Data da contribuição</li>
+            </ul>
+            </p>
+        </div>
+
+        <div class="region">
+            <h2 class="title">Código</h2>
+            <p>
+                Requisitos básicos para o projeto ser considerado para avaliação:
+            <ul>
+                <li>
+                    O sistema deve ser feito utilizando: PHP, PDO e MySql.
+                </li>
+                <li>
+                    Utilizar o banco de dados proposto abaixo.
+                </li>
+                <li>
+                    Se utilizar imagens de terceiros não esquecer de citar os créditos.
+                </li>
+            </ul>
+            </p>
+            <p>
+                Critérios de avaliação
+            </p>
+            <ul>
+                <li>Estilização da página utilizando recursos de CSS<code>(1,0)</code></li>
+                <li>Estruturação da página utilizando tags semânticamente adequadas para cada contexto<code>(1,0)</code>
+                </li>
+                <li>Validação de dados utilizando <code>isset</code> no PHP e <code>required</code> no HTML
+                    <code>(1,0)</code></li>
+                <li>Deve ser possível inserir <code>(2,0)</code></li>
+                <li>Deve ser possível visualizar a lista de contribuições ordenado em ordem decrescente pela data de
+                    contribuição<code>(2,0)</code></li>
+                <li>Deve ser possível remover contribuição <code>(2,0)</code></li>
+                <li>Deve ser possível visualizar a quantidade total de arrecadações <code>(0,5)</code></li>
+                <li>Deve ser possível visualizar o total em dinheiro arrecadado <code>(0,5)</code></li>
+            </ul>
+            <p>
+                Fique a vontade para adicionar mais funcionalidades ao sistema, porém, as funcionalidades acima são
+                obrigatórias para avaliação.
+            </p>
+            <p>
+                Embora o banco de dados seja o mesmo, dificilmente 2 grupos terão a mesma estruturação HTML, CSS e PHP.
+                <strong>Deste modo,
+                    caso dois projetos tenham muita semelhança visual e estrutural, ambos terão a nota zerada.
+                </strong>
+            </p>
+        </div>
+
+        <div class="region">
+            <h2 class="title">Banco de Dados</h2>
+            <p>
+                Para a atividade, utilize o banco de dados abaixo:
+            </p>
+            <pre><code class="sql">
+CREATE DATABASE vaquinha;
+USE vaquinha;
+
+CREATE TABLE colaborador (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    valor DECIMAL(10,2) NOT NULL,
+    data DATE NOT NULL
+);
+            </code></pre>
+
+            <div class="region">
+                <h2 class="title">Referências Bibliográficas</h2>
+                <a href="https://www.w3schools.com/php/">W3Schools - PHP</a><br />
+                <a href="https://medium.com/@hardeylarning/introduction-to-php-48666b582725">INTRODUCTION TO
+                    PHP</a><br />
+                <a href="https://pixabay.com/illustrations/the-stake-bonfire-festa-junina-7259074/">
+                    Imagem de capa por <strong>pixabay</strong>
+                </a>
+            </div>
+    </main>
+
+    <footer>
+        <p>Desenvolvido por Giovanni Francesco Guarnieri</p>
+    </footer>
+
+</body>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+</html>
